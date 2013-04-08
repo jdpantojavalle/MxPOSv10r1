@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B376793E-AE23-4E8C-8A23-61BDEA31DFAB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MxPOS10</RootNamespace>
+    <AssemblyName>MxPOS10</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r100_c221.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r101_c123.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r102_c2.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r103_c157.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r103_c375.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r103_c76.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r104_c257.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r104_c26.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r105_c362.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r105_c42.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r106_c238.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c145.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c273.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c323.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c339.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c60.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r107_c95.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r108_c181.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r108_c194.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r109_c296.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r10_c126.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r10_c144.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r10_c161.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r10_c199.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r10_c57.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r110_c296.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r110_c302.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r110_c306.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r111_c302.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c20.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c281.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c303.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c342.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c384.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r11_c5.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r122_c78.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r123_c99.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r124_c140.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r124_c218.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r124_c236.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r125_c163.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r125_c296.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r126_c193.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r126_c317.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r126_c343.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r126_c58.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r127_c125.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r127_c261.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r127_c275.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r128_c176.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r128_c4.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r128_c41.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r129_c23.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r12_c222.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r12_c242.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r12_c262.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r12_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r12_c81.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r130_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r130_c378.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r13_c43.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r142_c75.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r143_c177.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r143_c374.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r144_c234.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r144_c254.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c164.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c200.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c220.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c364.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c6.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r145_c61.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r146_c142.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r146_c24.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r147_c43.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r147_c96.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r148_c118.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r149_c278.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r149_c298.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r149_c318.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r149_c342.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c104.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c324.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c326.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c384.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c387.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r14_c388.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r159_c143.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c303.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c304.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c305.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c363.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r15_c368.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r160_c129.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r161_c174.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r161_c382.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r162_c105.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r163_c158.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r163_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r163_c243.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r163_c262.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r164_c20.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r164_c55.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r165_c82.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r166_c216.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r167_c2.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r167_c43.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r168_c283.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r169_c303.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r169_c324.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r169_c346.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r16_c387.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r170_c356.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r17_c363.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c100.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c121.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c141.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c161.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c175.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c217.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c22.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c239.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c259.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c3.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c345.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c40.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c58.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r182_c78.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r183_c297.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r183_c379.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r184_c279.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r185_c319.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r185_c357.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r18_c304.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r191_c344.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r192_c260.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r192_c298.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r193_c141.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r193_c198.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r193_c217.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r193_c237.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r194_c18.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r194_c61.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r195_c1.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r195_c362.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r195_c383.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r195_c42.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r196_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r197_c121.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r197_c282.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r197_c80.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r197_c98.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r198_c165.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r198_c180.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r19_c324.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c218.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c240.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c320.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c344.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r1_c361.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r206_c180.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r207_c2.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r207_c301.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r208_c219.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r209_c56.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r210_c164.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r211_c257.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r211_c27.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r211_c274.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r211_c321.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r211_c77.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r212_c381.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r213_c42.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r214_c127.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r215_c107.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r215_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r215_c359.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r216_c340.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r217_c139.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r218_c240.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r229_c276.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r230_c237.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r230_c298.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r230_c344.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r230_c57.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r231_c3.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r232_c385.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c177.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c195.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c218.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c22.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c319.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r233_c42.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r234_c120.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r234_c165.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r234_c97.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r235_c142.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r236_c258.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r236_c363.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r237_c76.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r248_c381.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r249_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r250_c278.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r250_c295.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r251_c44.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r251_c8.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r252_c178.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r252_c344.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r253_c101.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r253_c123.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r253_c140.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r253_c158.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r253_c253.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r254_c192.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r254_c55.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r255_c19.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r255_c361.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r255_c76.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r256_c214.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r257_c239.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r26_c201.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r270_c164.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r271_c380.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r272_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r273_c1.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r273_c277.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r274_c178.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r274_c302.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r274_c344.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r275_c19.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r275_c54.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c105.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c126.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c145.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c319.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r276_c39.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r277_c213.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r277_c234.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r277_c253.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r277_c80.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r27_c260.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r27_c3.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r286_c276.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r287_c1.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r287_c363.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r288_c174.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c196.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c216.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c302.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c342.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r289_c382.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r28_c278.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r290_c164.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r290_c24.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r290_c258.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r291_c236.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r292_c103.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r292_c126.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r292_c43.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r292_c60.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r292_c79.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r293_c141.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r29_c146.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r29_c166.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r29_c181.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r29_c299.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r29_c325.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r2_c259.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r2_c277.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r2_c300.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r2_c381.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r301_c1.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r301_c103.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r301_c123.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r301_c142.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r303_c164.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r304_c78.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r305_c20.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r305_c41.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r305_c55.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r30_c222.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r30_c242.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r30_c339.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r30_c62.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r31_c20.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r31_c41.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r32_c79.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r33_c106.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r34_c128.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r35_c3.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r35_c7.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r35_c9.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r36_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r36_c380.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r37_c7.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c102.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c122.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c141.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c159.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c176.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c21.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c41.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c59.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r3_c77.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r46_c256.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r47_c295.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r48_c162.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r48_c197.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c142.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c179.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c218.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c316.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c41.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r49_c61.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r4_c5.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r50_c124.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r50_c241.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r51_c103.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r51_c277.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r51_c377.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r51_c79.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r52_c341.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r52_c360.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r53_c25.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r53_c5.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r62_c274.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r63_c39.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r64_c160.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r65_c177.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r65_c194.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r66_c141.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r66_c19.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r67_c237.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r68_c103.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r68_c119.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r68_c257.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r68_c7.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r69_c338.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r69_c365.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r69_c386.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r69_c77.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r70_c62.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r71_c321.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r72_c296.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r73_c213.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r84_c342.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r85_c280.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r85_c299.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r85_c358.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r85_c376.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r86_c215.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r87_c322.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r88_c121.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r88_c180.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r88_c201.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r89_c103.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r89_c142.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r89_c235.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r90_c163.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r90_c255.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r91_c38.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r91_c54.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r91_c74.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r92_c7.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r93_c27.png" />
+    <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r9_c177.png" />
+    <Content Include="Sistema\Paginas\PaginaDomicilio.aspx" />
+    <Content Include="Sistema\Paginas\PaginaDomicilioFiscal.aspx" />
+    <Content Include="Sistema\Paginas\PaginaEmisor.aspx" />
+    <Content Include="Sistema\Paginas\PaginaProveedor.aspx" />
+    <Content Include="Sistema\Paginas\PaginaReceptor.aspx" />
+    <Content Include="Sistema\Reportes\Emisores\ReporteEmisor.aspx" />
+    <Content Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.aspx" />
+    <Content Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx" />
+    <Content Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.aspx" />
+    <Content Include="Styles\GreenPasture\default.css" />
+    <Content Include="Styles\GreenPasture\images\header-img.jpg" />
+    <Content Include="Styles\GreenPasture\index.html" />
+    <Content Include="Styles\GreenPasture\license.txt" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sistema\Datos\ModeloMxPOSv10r1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMxPOSv10r1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Entidades\EntidadProveedor.cs" />
+    <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.cs">
+      <DependentUpon>PaginaProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.designer.cs">
+      <DependentUpon>PaginaProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx.cs">
+      <DependentUpon>ReporteReceptor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx.designer.cs">
+      <DependentUpon>ReporteReceptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Receptores\ReporteReceptor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Emisores\ReporteEmisor.aspx.cs">
+      <DependentUpon>ReporteEmisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Emisores\ReporteEmisor.aspx.designer.cs">
+      <DependentUpon>ReporteEmisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Emisores\ReporteEmisor.cs" />
+    <Compile Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.aspx.cs">
+      <DependentUpon>ReporteEmisorDomicilioFiscal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.aspx.designer.cs">
+      <DependentUpon>ReporteEmisorDomicilioFiscal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.aspx.cs">
+      <DependentUpon>ReporteReceptorDomicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.aspx.designer.cs">
+      <DependentUpon>ReporteReceptorDomicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Vistas\VistaDomicilio.cs" />
+    <Compile Include="Sistema\Vistas\VistaProveedor.cs" />
+    <Compile Include="Sistema\Vistas\VistaProveedorDomicilio.cs" />
+    <Compile Include="Sistema\Vistas\VistaReceptor.cs" />
+    <Compile Include="Sistema\Vistas\VistaDomicilioFiscal.cs" />
+    <Compile Include="Sistema\Vistas\VistaEmisor.cs" />
+    <Compile Include="Sistema\Paginas\PaginaDomicilio.aspx.cs">
+      <DependentUpon>PaginaDomicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaDomicilio.aspx.designer.cs">
+      <DependentUpon>PaginaDomicilio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaDomicilioFiscal.aspx.cs">
+      <DependentUpon>PaginaDomicilioFiscal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaDomicilioFiscal.aspx.designer.cs">
+      <DependentUpon>PaginaDomicilioFiscal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaEmisor.aspx.cs">
+      <DependentUpon>PaginaEmisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaEmisor.aspx.designer.cs">
+      <DependentUpon>PaginaEmisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Entidades\EntidadEmisor.cs" />
+    <Compile Include="Sistema\Entidades\EntidadReceptor.cs" />
+    <Compile Include="Sistema\Paginas\PaginaReceptor.aspx.cs">
+      <DependentUpon>PaginaReceptor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaReceptor.aspx.designer.cs">
+      <DependentUpon>PaginaReceptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Utilidades\Mensaje.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\GreenPasture\GreenPasture.Master.cs">
+      <DependentUpon>GreenPasture.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\GreenPasture\GreenPasture.Master.designer.cs">
+      <DependentUpon>GreenPasture.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Sistema\Datos\ModeloMxPOSv10r1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloMxPOSv10r1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\GreenPasture\GreenPasture.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilioSubreporte.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptor.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Emisores\ReporteEmisor.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscalSubreporte.rdlc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3464</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

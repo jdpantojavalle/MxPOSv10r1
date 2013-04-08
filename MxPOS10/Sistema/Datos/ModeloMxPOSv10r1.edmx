@@ -1,0 +1,1881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ModeloMxPOSv10r1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModeloMxPOSv10r1StoreContainer">
+          <EntitySet Name="Compras" EntityType="ModeloMxPOSv10r1.Store.Compras" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ComprasDetalles" EntityType="ModeloMxPOSv10r1.Store.ComprasDetalles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comprobantes" EntityType="ModeloMxPOSv10r1.Store.Comprobantes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Conceptos" EntityType="ModeloMxPOSv10r1.Store.Conceptos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Configuraciones" EntityType="ModeloMxPOSv10r1.Store.Configuraciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Domicilios" EntityType="ModeloMxPOSv10r1.Store.Domicilios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DomiciliosFiscales" EntityType="ModeloMxPOSv10r1.Store.DomiciliosFiscales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Emisores" EntityType="ModeloMxPOSv10r1.Store.Emisores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Errores" EntityType="ModeloMxPOSv10r1.Store.Errores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EstatusCompra" EntityType="ModeloMxPOSv10r1.Store.EstatusCompra" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EstatusComprobante" EntityType="ModeloMxPOSv10r1.Store.EstatusComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExpedidoEn" EntityType="ModeloMxPOSv10r1.Store.ExpedidoEn" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Logs" EntityType="ModeloMxPOSv10r1.Store.Logs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Productos" EntityType="ModeloMxPOSv10r1.Store.Productos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Proveedores" EntityType="ModeloMxPOSv10r1.Store.Proveedores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProveedoresContacto" EntityType="ModeloMxPOSv10r1.Store.ProveedoresContacto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProveedoresDomicilios" EntityType="ModeloMxPOSv10r1.Store.ProveedoresDomicilios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Receptores" EntityType="ModeloMxPOSv10r1.Store.Receptores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReceptoresContactos" EntityType="ModeloMxPOSv10r1.Store.ReceptoresContactos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RegimenesFiscales" EntityType="ModeloMxPOSv10r1.Store.RegimenesFiscales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SerieFolio" EntityType="ModeloMxPOSv10r1.Store.SerieFolio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="ModeloMxPOSv10r1.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposDeComprobantes" EntityType="ModeloMxPOSv10r1.Store.TiposDeComprobantes" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Compras_EstatusCompra" Association="ModeloMxPOSv10r1.Store.FK_Compras_EstatusCompra">
+            <End Role="EstatusCompra" EntitySet="EstatusCompra" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compras_Proveedores" Association="ModeloMxPOSv10r1.Store.FK_Compras_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComprasDetalles_Compras" Association="ModeloMxPOSv10r1.Store.FK_ComprasDetalles_Compras">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="ComprasDetalles" EntitySet="ComprasDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComprasDetalles_Productos" Association="ModeloMxPOSv10r1.Store.FK_ComprasDetalles_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="ComprasDetalles" EntitySet="ComprasDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_Emisores" Association="ModeloMxPOSv10r1.Store.FK_Comprobantes_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_Receptores" Association="ModeloMxPOSv10r1.Store.FK_Comprobantes_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_TiposDeComprobantes" Association="ModeloMxPOSv10r1.Store.FK_Comprobantes_TiposDeComprobantes">
+            <End Role="TiposDeComprobantes" EntitySet="TiposDeComprobantes" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conceptos_Comprobantes" Association="ModeloMxPOSv10r1.Store.FK_Conceptos_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="Conceptos" EntitySet="Conceptos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conceptos_Productos" Association="ModeloMxPOSv10r1.Store.FK_Conceptos_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Conceptos" EntitySet="Conceptos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilios_Receptores" Association="ModeloMxPOSv10r1.Store.FK_Domicilios_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="Domicilios" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emisores" Association="ModeloMxPOSv10r1.Store.FK_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="DomiciliosFiscales" EntitySet="DomiciliosFiscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstatusComprobante_Comprobantes" Association="ModeloMxPOSv10r1.Store.FK_EstatusComprobante_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="EstatusComprobante" EntitySet="EstatusComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpedidoEn_Comprobantes" Association="ModeloMxPOSv10r1.Store.FK_ExpedidoEn_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="ExpedidoEn" EntitySet="ExpedidoEn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProveedoresContacto_Proveedores" Association="ModeloMxPOSv10r1.Store.FK_ProveedoresContacto_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ProveedoresContacto" EntitySet="ProveedoresContacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProveedoresDomicilios_Proveedores" Association="ModeloMxPOSv10r1.Store.FK_ProveedoresDomicilios_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ProveedoresDomicilios" EntitySet="ProveedoresDomicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceptoresContactos_Receptores" Association="ModeloMxPOSv10r1.Store.FK_ReceptoresContactos_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="ReceptoresContactos" EntitySet="ReceptoresContactos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegimenesFiscales_Emisores" Association="ModeloMxPOSv10r1.Store.FK_RegimenesFiscales_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="RegimenesFiscales" EntitySet="RegimenesFiscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SerieFolio_DomiciliosFiscales" Association="ModeloMxPOSv10r1.Store.FK_SerieFolio_DomiciliosFiscales">
+            <End Role="DomiciliosFiscales" EntitySet="DomiciliosFiscales" />
+            <End Role="SerieFolio" EntitySet="SerieFolio" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Compras">
+          <Key>
+            <PropertyRef Name="IDCompra" />
+          </Key>
+          <Property Name="IDCompra" Type="int" Nullable="false" />
+          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="IDEstatusCompra" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Folio" Type="varchar(max)" Nullable="false" />
+          <Property Name="Serie" Type="varchar(max)" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Subtotal" Type="float" Nullable="false" />
+          <Property Name="Descuento" Type="float" Nullable="false" />
+          <Property Name="MotivoDescuento" Type="varchar(max)" Nullable="false" />
+          <Property Name="IVA" Type="float" Nullable="false" />
+          <Property Name="Total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComprasDetalles">
+          <Key>
+            <PropertyRef Name="IDCompraDetalle" />
+          </Key>
+          <Property Name="IDCompraDetalle" Type="int" Nullable="false" />
+          <Property Name="IDCompra" Type="int" Nullable="false" />
+          <Property Name="IDProducto" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Cantidad" Type="float" Nullable="false" />
+          <Property Name="Unidad" Type="varchar(max)" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Precio" Type="float" Nullable="false" />
+          <Property Name="Descuento" Type="float" Nullable="false" />
+          <Property Name="DescuentoMotivo" Type="varchar(max)" Nullable="false" />
+          <Property Name="Importe" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comprobantes">
+          <Key>
+            <PropertyRef Name="IDComprobante" />
+          </Key>
+          <Property Name="IDComprobante" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="int" Nullable="false" />
+          <Property Name="IDReceptor" Type="int" Nullable="false" />
+          <Property Name="IDTipoComprobante" Type="int" Nullable="false" />
+          <Property Name="IDEstatusComprobante" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Version" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_Serie" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Folio" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Fecha" Type="datetime" Nullable="false" />
+          <Property Name="CFDI32_Req_Sello" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_FormaDePago" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_NoCertificado" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_Certificado" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_CondicionesDePago" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Subtotal" Type="float" Nullable="false" />
+          <Property Name="CFDI32_Opc_Descuento" Type="float" />
+          <Property Name="CFDI32_Opc_MotivoDescuento" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_TipoCambio" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Total" Type="float" Nullable="false" />
+          <Property Name="CFDI32_Req_TipoDeComprobante" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_MetodoDePago" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_LugarExpedicion" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_NumCtaPago" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_FolioFiscalOrig" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_SerieFolioFiscalOrig" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_FechaFolioFiscalOrig" Type="datetime" />
+          <Property Name="CFDI32_Opc_MontoFolioFiscalOrig" Type="float" />
+          <Property Name="IVA" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Conceptos">
+          <Key>
+            <PropertyRef Name="IDConcepto" />
+          </Key>
+          <Property Name="IDConcepto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDComprobante" Type="int" Nullable="false" />
+          <Property Name="IDProducto" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Cantidad" Type="float" Nullable="false" />
+          <Property Name="CFDI32_Req_Unidad" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_NoIdentificacion" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_ValorUnitario" Type="float" Nullable="false" />
+          <Property Name="CFDI32_Req_Importe" Type="float" Nullable="false" />
+          <Property Name="Descuento" Type="float" Nullable="false" />
+          <Property Name="DescuentoMotivo" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Configuraciones">
+          <Key>
+            <PropertyRef Name="IDConfiguracion" />
+          </Key>
+          <Property Name="IDConfiguracion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="IVA" Type="float" Nullable="false" />
+          <Property Name="DescuentoMinimo" Type="float" Nullable="false" />
+          <Property Name="DescuentoMaximo" Type="float" Nullable="false" />
+          <Property Name="DescuentoPassword" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domicilios">
+          <Key>
+            <PropertyRef Name="IDReceptorDomicilio" />
+          </Key>
+          <Property Name="IDReceptorDomicilio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDReceptor" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Calle" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Colonia" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Localidad" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Referencia" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Municipio" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Estado" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Pais" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_CodigoPostal" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="DomiciliosFiscales">
+          <Key>
+            <PropertyRef Name="IDEmisorDomicilioFiscal" />
+          </Key>
+          <Property Name="IDEmisorDomicilioFiscal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Calle" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Colonia" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Localidad" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Referencia" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Municipio" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_Estado" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_Pais" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Req_CodigoPostal" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emisores">
+          <Key>
+            <PropertyRef Name="IDEmisor" />
+          </Key>
+          <Property Name="IDEmisor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_RFC" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_Nombre" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Errores">
+          <Key>
+            <PropertyRef Name="IDError" />
+          </Key>
+          <Property Name="IDError" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Usuario" Type="varchar(max)" Nullable="false" />
+          <Property Name="CodigoError" Type="int" Nullable="false" />
+          <Property Name="MensajeError" Type="varchar(max)" Nullable="false" />
+          <Property Name="SolucionError" Type="varchar(max)" Nullable="false" />
+          <Property Name="Modulo" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstatusCompra">
+          <Key>
+            <PropertyRef Name="IDEstatusCompra" />
+          </Key>
+          <Property Name="IDEstatusCompra" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Leyenda" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstatusComprobante">
+          <Key>
+            <PropertyRef Name="IDEstatusComprobante" />
+          </Key>
+          <Property Name="IDEstatusComprobante" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Leyenda" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpedidoEn">
+          <Key>
+            <PropertyRef Name="IDExpedidoEn" />
+          </Key>
+          <Property Name="IDExpedidoEn" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDComprobante" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Calle" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Colonia" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Localidad" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Referencia" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Municipio" Type="varchar(max)" />
+          <Property Name="CFDI32_Opc_Estado" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Pais" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_CodigoPostal" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="IDLog" />
+          </Key>
+          <Property Name="IDLog" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Fecha" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="Usuario" Type="varchar(max)" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Accion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Parametros" Type="varchar(max)" Nullable="false" />
+          <Property Name="Resultado" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Nombre" Type="varchar(max)" Nullable="false" />
+          <Property Name="Imagen" Type="binary" />
+          <Property Name="Notas" Type="varchar(max)" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="Unidad" Type="varchar(max)" Nullable="false" />
+          <Property Name="Costo" Type="float" Nullable="false" />
+          <Property Name="CostoAnterior" Type="float" />
+          <Property Name="Precio" Type="float" Nullable="false" />
+          <Property Name="PrecioAnterior" Type="float" />
+          <Property Name="Entradas" Type="int" Nullable="false" />
+          <Property Name="Salidas" Type="int" Nullable="false" />
+          <Property Name="Saldo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="IDProveedor" />
+          </Key>
+          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="RFC" Type="varchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProveedoresContacto">
+          <Key>
+            <PropertyRef Name="IDProveedorContacto" />
+          </Key>
+          <Property Name="IDProveedorContacto" Type="int" Nullable="false" />
+          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Telefono1" Type="varchar(max)" />
+          <Property Name="Telefono2" Type="varchar(max)" />
+          <Property Name="Email1" Type="varchar(max)" />
+          <Property Name="Email2" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ProveedoresDomicilios">
+          <Key>
+            <PropertyRef Name="IDProveedorDomicilio" />
+          </Key>
+          <Property Name="IDProveedorDomicilio" Type="int" Nullable="false" />
+          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Calle" Type="varchar(max)" />
+          <Property Name="NoExterior" Type="varchar(max)" />
+          <Property Name="NoInterior" Type="varchar(max)" />
+          <Property Name="Colonia" Type="varchar(max)" />
+          <Property Name="Localidad" Type="varchar(max)" />
+          <Property Name="Referencia" Type="varchar(max)" />
+          <Property Name="Municipio" Type="varchar(max)" />
+          <Property Name="Estado" Type="varchar(max)" />
+          <Property Name="Pais" Type="varchar(max)" />
+          <Property Name="CodigoPostal" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Receptores">
+          <Key>
+            <PropertyRef Name="IDReceptor" />
+          </Key>
+          <Property Name="IDReceptor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_RFC" Type="varchar(max)" Nullable="false" />
+          <Property Name="CFDI32_Opc_Nombre" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ReceptoresContactos">
+          <Key>
+            <PropertyRef Name="IDReceptorContacto" />
+          </Key>
+          <Property Name="IDReceptorContacto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDReceptor" Type="int" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Telefono1" Type="varchar(max)" />
+          <Property Name="Telefono2" Type="varchar(max)" />
+          <Property Name="Email1" Type="varchar(max)" />
+          <Property Name="Email2" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RegimenesFiscales">
+          <Key>
+            <PropertyRef Name="IDRegimenFiscal" />
+          </Key>
+          <Property Name="IDRegimenFiscal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_Regimen" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SerieFolio">
+          <Key>
+            <PropertyRef Name="IDSerieFolio" />
+          </Key>
+          <Property Name="IDSerieFolio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDDomicilioFiscal" Type="int" Nullable="false" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Seleccionado" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="Serie" Type="varchar(max)" Nullable="false" />
+          <Property Name="FolioInicio" Type="int" Nullable="false" />
+          <Property Name="FolioLimite" Type="int" Nullable="false" />
+          <Property Name="FolioActual" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TiposDeComprobantes">
+          <Key>
+            <PropertyRef Name="IDTipoDeComprobante" />
+          </Key>
+          <Property Name="IDTipoDeComprobante" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="bit" Nullable="false" />
+          <Property Name="Dumb" Type="varchar(max)" />
+          <Property Name="CFDI32_Req_TipoDeComprobante" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Compras_EstatusCompra">
+          <End Role="EstatusCompra" Type="ModeloMxPOSv10r1.Store.EstatusCompra" Multiplicity="1" />
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Store.Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstatusCompra">
+              <PropertyRef Name="IDEstatusCompra" />
+            </Principal>
+            <Dependent Role="Compras">
+              <PropertyRef Name="IDEstatusCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compras_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Store.Proveedores" Multiplicity="1" />
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Store.Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="Compras">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComprasDetalles_Compras">
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Store.Compras" Multiplicity="1" />
+          <End Role="ComprasDetalles" Type="ModeloMxPOSv10r1.Store.ComprasDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="IDCompra" />
+            </Principal>
+            <Dependent Role="ComprasDetalles">
+              <PropertyRef Name="IDCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComprasDetalles_Productos">
+          <End Role="Productos" Type="ModeloMxPOSv10r1.Store.Productos" Multiplicity="1" />
+          <End Role="ComprasDetalles" Type="ModeloMxPOSv10r1.Store.ComprasDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="ComprasDetalles">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Store.Emisores" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Store.Receptores" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_TiposDeComprobantes">
+          <End Role="TiposDeComprobantes" Type="ModeloMxPOSv10r1.Store.TiposDeComprobantes" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposDeComprobantes">
+              <PropertyRef Name="IDTipoDeComprobante" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDTipoComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conceptos_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="1" />
+          <End Role="Conceptos" Type="ModeloMxPOSv10r1.Store.Conceptos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="Conceptos">
+              <PropertyRef Name="IDComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conceptos_Productos">
+          <End Role="Productos" Type="ModeloMxPOSv10r1.Store.Productos" Multiplicity="1" />
+          <End Role="Conceptos" Type="ModeloMxPOSv10r1.Store.Conceptos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="Conceptos">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilios_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Store.Receptores" Multiplicity="1" />
+          <End Role="Domicilios" Type="ModeloMxPOSv10r1.Store.Domicilios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="Domicilios">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Store.Emisores" Multiplicity="1" />
+          <End Role="DomiciliosFiscales" Type="ModeloMxPOSv10r1.Store.DomiciliosFiscales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="DomiciliosFiscales">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstatusComprobante_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="1" />
+          <End Role="EstatusComprobante" Type="ModeloMxPOSv10r1.Store.EstatusComprobante" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="EstatusComprobante">
+              <PropertyRef Name="IDEstatusComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpedidoEn_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Store.Comprobantes" Multiplicity="1" />
+          <End Role="ExpedidoEn" Type="ModeloMxPOSv10r1.Store.ExpedidoEn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="ExpedidoEn">
+              <PropertyRef Name="IDComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProveedoresContacto_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Store.Proveedores" Multiplicity="1" />
+          <End Role="ProveedoresContacto" Type="ModeloMxPOSv10r1.Store.ProveedoresContacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="ProveedoresContacto">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProveedoresDomicilios_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Store.Proveedores" Multiplicity="1" />
+          <End Role="ProveedoresDomicilios" Type="ModeloMxPOSv10r1.Store.ProveedoresDomicilios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="ProveedoresDomicilios">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceptoresContactos_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Store.Receptores" Multiplicity="1" />
+          <End Role="ReceptoresContactos" Type="ModeloMxPOSv10r1.Store.ReceptoresContactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="ReceptoresContactos">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegimenesFiscales_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Store.Emisores" Multiplicity="1" />
+          <End Role="RegimenesFiscales" Type="ModeloMxPOSv10r1.Store.RegimenesFiscales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="RegimenesFiscales">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SerieFolio_DomiciliosFiscales">
+          <End Role="DomiciliosFiscales" Type="ModeloMxPOSv10r1.Store.DomiciliosFiscales" Multiplicity="1" />
+          <End Role="SerieFolio" Type="ModeloMxPOSv10r1.Store.SerieFolio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomiciliosFiscales">
+              <PropertyRef Name="IDEmisorDomicilioFiscal" />
+            </Principal>
+            <Dependent Role="SerieFolio">
+              <PropertyRef Name="IDDomicilioFiscal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ModeloMxPOSv10r1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MxPOSv10r1Entidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compras" EntityType="ModeloMxPOSv10r1.Compras" />
+          <EntitySet Name="ComprasDetalles" EntityType="ModeloMxPOSv10r1.ComprasDetalles" />
+          <EntitySet Name="Comprobantes" EntityType="ModeloMxPOSv10r1.Comprobantes" />
+          <EntitySet Name="Conceptos" EntityType="ModeloMxPOSv10r1.Conceptos" />
+          <EntitySet Name="Configuraciones" EntityType="ModeloMxPOSv10r1.Configuraciones" />
+          <EntitySet Name="Domicilios" EntityType="ModeloMxPOSv10r1.Domicilios" />
+          <EntitySet Name="DomiciliosFiscales" EntityType="ModeloMxPOSv10r1.DomiciliosFiscales" />
+          <EntitySet Name="Emisores" EntityType="ModeloMxPOSv10r1.Emisores" />
+          <EntitySet Name="Errores" EntityType="ModeloMxPOSv10r1.Errores" />
+          <EntitySet Name="EstatusCompra" EntityType="ModeloMxPOSv10r1.EstatusCompra" />
+          <EntitySet Name="EstatusComprobante" EntityType="ModeloMxPOSv10r1.EstatusComprobante" />
+          <EntitySet Name="ExpedidoEn" EntityType="ModeloMxPOSv10r1.ExpedidoEn" />
+          <EntitySet Name="Logs" EntityType="ModeloMxPOSv10r1.Logs" />
+          <EntitySet Name="Productos" EntityType="ModeloMxPOSv10r1.Productos" />
+          <EntitySet Name="Proveedores" EntityType="ModeloMxPOSv10r1.Proveedores" />
+          <EntitySet Name="ProveedoresContacto" EntityType="ModeloMxPOSv10r1.ProveedoresContacto" />
+          <EntitySet Name="ProveedoresDomicilios" EntityType="ModeloMxPOSv10r1.ProveedoresDomicilios" />
+          <EntitySet Name="Receptores" EntityType="ModeloMxPOSv10r1.Receptores" />
+          <EntitySet Name="ReceptoresContactos" EntityType="ModeloMxPOSv10r1.ReceptoresContactos" />
+          <EntitySet Name="RegimenesFiscales" EntityType="ModeloMxPOSv10r1.RegimenesFiscales" />
+          <EntitySet Name="SerieFolio" EntityType="ModeloMxPOSv10r1.SerieFolio" />
+          <EntitySet Name="sysdiagrams" EntityType="ModeloMxPOSv10r1.sysdiagrams" />
+          <EntitySet Name="TiposDeComprobantes" EntityType="ModeloMxPOSv10r1.TiposDeComprobantes" />
+          <AssociationSet Name="FK_Compras_EstatusCompra" Association="ModeloMxPOSv10r1.FK_Compras_EstatusCompra">
+            <End Role="EstatusCompra" EntitySet="EstatusCompra" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compras_Proveedores" Association="ModeloMxPOSv10r1.FK_Compras_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Compras" EntitySet="Compras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComprasDetalles_Compras" Association="ModeloMxPOSv10r1.FK_ComprasDetalles_Compras">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="ComprasDetalles" EntitySet="ComprasDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComprasDetalles_Productos" Association="ModeloMxPOSv10r1.FK_ComprasDetalles_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="ComprasDetalles" EntitySet="ComprasDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_Emisores" Association="ModeloMxPOSv10r1.FK_Comprobantes_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_Receptores" Association="ModeloMxPOSv10r1.FK_Comprobantes_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_TiposDeComprobantes" Association="ModeloMxPOSv10r1.FK_Comprobantes_TiposDeComprobantes">
+            <End Role="TiposDeComprobantes" EntitySet="TiposDeComprobantes" />
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conceptos_Comprobantes" Association="ModeloMxPOSv10r1.FK_Conceptos_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="Conceptos" EntitySet="Conceptos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstatusComprobante_Comprobantes" Association="ModeloMxPOSv10r1.FK_EstatusComprobante_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="EstatusComprobante" EntitySet="EstatusComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpedidoEn_Comprobantes" Association="ModeloMxPOSv10r1.FK_ExpedidoEn_Comprobantes">
+            <End Role="Comprobantes" EntitySet="Comprobantes" />
+            <End Role="ExpedidoEn" EntitySet="ExpedidoEn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conceptos_Productos" Association="ModeloMxPOSv10r1.FK_Conceptos_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Conceptos" EntitySet="Conceptos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilios_Receptores" Association="ModeloMxPOSv10r1.FK_Domicilios_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="Domicilios" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emisores" Association="ModeloMxPOSv10r1.FK_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="DomiciliosFiscales" EntitySet="DomiciliosFiscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SerieFolio_DomiciliosFiscales" Association="ModeloMxPOSv10r1.FK_SerieFolio_DomiciliosFiscales">
+            <End Role="DomiciliosFiscales" EntitySet="DomiciliosFiscales" />
+            <End Role="SerieFolio" EntitySet="SerieFolio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegimenesFiscales_Emisores" Association="ModeloMxPOSv10r1.FK_RegimenesFiscales_Emisores">
+            <End Role="Emisores" EntitySet="Emisores" />
+            <End Role="RegimenesFiscales" EntitySet="RegimenesFiscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProveedoresContacto_Proveedores" Association="ModeloMxPOSv10r1.FK_ProveedoresContacto_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ProveedoresContacto" EntitySet="ProveedoresContacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProveedoresDomicilios_Proveedores" Association="ModeloMxPOSv10r1.FK_ProveedoresDomicilios_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="ProveedoresDomicilios" EntitySet="ProveedoresDomicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReceptoresContactos_Receptores" Association="ModeloMxPOSv10r1.FK_ReceptoresContactos_Receptores">
+            <End Role="Receptores" EntitySet="Receptores" />
+            <End Role="ReceptoresContactos" EntitySet="ReceptoresContactos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Compras">
+          <Key>
+            <PropertyRef Name="IDCompra" />
+          </Key>
+          <Property Name="IDCompra" Type="Int32" Nullable="false" />
+          <Property Name="IDProveedor" Type="Int32" Nullable="false" />
+          <Property Name="IDEstatusCompra" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Folio" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Serie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Subtotal" Type="Double" Nullable="false" />
+          <Property Name="Descuento" Type="Double" Nullable="false" />
+          <Property Name="MotivoDescuento" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IVA" Type="Double" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="EstatusCompra" Relationship="ModeloMxPOSv10r1.FK_Compras_EstatusCompra" FromRole="Compras" ToRole="EstatusCompra" />
+          <NavigationProperty Name="Proveedores" Relationship="ModeloMxPOSv10r1.FK_Compras_Proveedores" FromRole="Compras" ToRole="Proveedores" />
+          <NavigationProperty Name="ComprasDetalles" Relationship="ModeloMxPOSv10r1.FK_ComprasDetalles_Compras" FromRole="Compras" ToRole="ComprasDetalles" />
+        </EntityType>
+        <EntityType Name="ComprasDetalles">
+          <Key>
+            <PropertyRef Name="IDCompraDetalle" />
+          </Key>
+          <Property Name="IDCompraDetalle" Type="Int32" Nullable="false" />
+          <Property Name="IDCompra" Type="Int32" Nullable="false" />
+          <Property Name="IDProducto" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Cantidad" Type="Double" Nullable="false" />
+          <Property Name="Unidad" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
+          <Property Name="Descuento" Type="Double" Nullable="false" />
+          <Property Name="DescuentoMotivo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Importe" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Compras" Relationship="ModeloMxPOSv10r1.FK_ComprasDetalles_Compras" FromRole="ComprasDetalles" ToRole="Compras" />
+          <NavigationProperty Name="Productos" Relationship="ModeloMxPOSv10r1.FK_ComprasDetalles_Productos" FromRole="ComprasDetalles" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Comprobantes">
+          <Key>
+            <PropertyRef Name="IDComprobante" />
+          </Key>
+          <Property Name="IDComprobante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="Int32" Nullable="false" />
+          <Property Name="IDReceptor" Type="Int32" Nullable="false" />
+          <Property Name="IDTipoComprobante" Type="Int32" Nullable="false" />
+          <Property Name="IDEstatusComprobante" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Version" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Serie" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Folio" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="CFDI32_Req_Sello" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_FormaDePago" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_NoCertificado" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Certificado" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_CondicionesDePago" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Subtotal" Type="Double" Nullable="false" />
+          <Property Name="CFDI32_Opc_Descuento" Type="Double" />
+          <Property Name="CFDI32_Opc_MotivoDescuento" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_TipoCambio" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Total" Type="Double" Nullable="false" />
+          <Property Name="CFDI32_Req_TipoDeComprobante" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_MetodoDePago" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_LugarExpedicion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NumCtaPago" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_FolioFiscalOrig" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_SerieFolioFiscalOrig" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_FechaFolioFiscalOrig" Type="DateTime" />
+          <Property Name="CFDI32_Opc_MontoFolioFiscalOrig" Type="Double" />
+          <Property Name="IVA" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Emisores" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_Emisores" FromRole="Comprobantes" ToRole="Emisores" />
+          <NavigationProperty Name="Receptores" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_Receptores" FromRole="Comprobantes" ToRole="Receptores" />
+          <NavigationProperty Name="TiposDeComprobantes" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_TiposDeComprobantes" FromRole="Comprobantes" ToRole="TiposDeComprobantes" />
+          <NavigationProperty Name="Conceptos" Relationship="ModeloMxPOSv10r1.FK_Conceptos_Comprobantes" FromRole="Comprobantes" ToRole="Conceptos" />
+          <NavigationProperty Name="EstatusComprobante" Relationship="ModeloMxPOSv10r1.FK_EstatusComprobante_Comprobantes" FromRole="Comprobantes" ToRole="EstatusComprobante" />
+          <NavigationProperty Name="ExpedidoEn" Relationship="ModeloMxPOSv10r1.FK_ExpedidoEn_Comprobantes" FromRole="Comprobantes" ToRole="ExpedidoEn" />
+        </EntityType>
+        <EntityType Name="Conceptos">
+          <Key>
+            <PropertyRef Name="IDConcepto" />
+          </Key>
+          <Property Name="IDConcepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDComprobante" Type="Int32" Nullable="false" />
+          <Property Name="IDProducto" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Cantidad" Type="Double" Nullable="false" />
+          <Property Name="CFDI32_Req_Unidad" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoIdentificacion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_ValorUnitario" Type="Double" Nullable="false" />
+          <Property Name="CFDI32_Req_Importe" Type="Double" Nullable="false" />
+          <Property Name="Descuento" Type="Double" Nullable="false" />
+          <Property Name="DescuentoMotivo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_Conceptos_Comprobantes" FromRole="Conceptos" ToRole="Comprobantes" />
+          <NavigationProperty Name="Productos" Relationship="ModeloMxPOSv10r1.FK_Conceptos_Productos" FromRole="Conceptos" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Configuraciones">
+          <Key>
+            <PropertyRef Name="IDConfiguracion" />
+          </Key>
+          <Property Name="IDConfiguracion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IVA" Type="Double" Nullable="false" />
+          <Property Name="DescuentoMinimo" Type="Double" Nullable="false" />
+          <Property Name="DescuentoMaximo" Type="Double" Nullable="false" />
+          <Property Name="DescuentoPassword" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Domicilios">
+          <Key>
+            <PropertyRef Name="IDDomicilio" />
+          </Key>
+          <Property Name="IDDomicilio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReceptor" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Calle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Colonia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Localidad" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Referencia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Municipio" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Estado" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Pais" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_CodigoPostal" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Receptores" Relationship="ModeloMxPOSv10r1.FK_Domicilios_Receptores" FromRole="Domicilios" ToRole="Receptores" />
+        </EntityType>
+        <EntityType Name="DomiciliosFiscales">
+          <Key>
+            <PropertyRef Name="IDDomicilioFiscal" />
+          </Key>
+          <Property Name="IDDomicilioFiscal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Calle" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Colonia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Localidad" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Referencia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Municipio" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Estado" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Pais" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_CodigoPostal" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Emisores" Relationship="ModeloMxPOSv10r1.FK_Emisores" FromRole="DomiciliosFiscales" ToRole="Emisores" />
+          <NavigationProperty Name="SerieFolio" Relationship="ModeloMxPOSv10r1.FK_SerieFolio_DomiciliosFiscales" FromRole="DomiciliosFiscales" ToRole="SerieFolio" />
+        </EntityType>
+        <EntityType Name="Emisores">
+          <Key>
+            <PropertyRef Name="IDEmisor" />
+          </Key>
+          <Property Name="IDEmisor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_RFC" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Nombre" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_Emisores" FromRole="Emisores" ToRole="Comprobantes" />
+          <NavigationProperty Name="DomiciliosFiscales" Relationship="ModeloMxPOSv10r1.FK_Emisores" FromRole="Emisores" ToRole="DomiciliosFiscales" />
+          <NavigationProperty Name="RegimenesFiscales" Relationship="ModeloMxPOSv10r1.FK_RegimenesFiscales_Emisores" FromRole="Emisores" ToRole="RegimenesFiscales" />
+        </EntityType>
+        <EntityType Name="Errores">
+          <Key>
+            <PropertyRef Name="IDError" />
+          </Key>
+          <Property Name="IDError" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoError" Type="Int32" Nullable="false" />
+          <Property Name="MensajeError" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SolucionError" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Modulo" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EstatusCompra">
+          <Key>
+            <PropertyRef Name="IDEstatusCompra" />
+          </Key>
+          <Property Name="IDEstatusCompra" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Leyenda" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Compras" Relationship="ModeloMxPOSv10r1.FK_Compras_EstatusCompra" FromRole="EstatusCompra" ToRole="Compras" />
+        </EntityType>
+        <EntityType Name="EstatusComprobante">
+          <Key>
+            <PropertyRef Name="IDEstatusComprobante" />
+          </Key>
+          <Property Name="IDEstatusComprobante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Leyenda" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_EstatusComprobante_Comprobantes" FromRole="EstatusComprobante" ToRole="Comprobantes" />
+        </EntityType>
+        <EntityType Name="ExpedidoEn">
+          <Key>
+            <PropertyRef Name="IDExpedidoEn" />
+          </Key>
+          <Property Name="IDExpedidoEn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDComprobante" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Calle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoExterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_NoInterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Colonia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Localidad" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Referencia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Municipio" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Estado" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Pais" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_CodigoPostal" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_ExpedidoEn_Comprobantes" FromRole="ExpedidoEn" ToRole="Comprobantes" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="IDLog" />
+          </Key>
+          <Property Name="IDLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Accion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Parametros" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Resultado" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="8000" FixedLength="true" />
+          <Property Name="Notas" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Unidad" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Costo" Type="Double" Nullable="false" />
+          <Property Name="CostoAnterior" Type="Double" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
+          <Property Name="PrecioAnterior" Type="Double" />
+          <Property Name="Entradas" Type="Int32" Nullable="false" />
+          <Property Name="Salidas" Type="Int32" Nullable="false" />
+          <Property Name="Saldo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ComprasDetalles" Relationship="ModeloMxPOSv10r1.FK_ComprasDetalles_Productos" FromRole="Productos" ToRole="ComprasDetalles" />
+          <NavigationProperty Name="Conceptos" Relationship="ModeloMxPOSv10r1.FK_Conceptos_Productos" FromRole="Productos" ToRole="Conceptos" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="IDProveedor" />
+          </Key>
+          <Property Name="IDProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="RFC" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Compras" Relationship="ModeloMxPOSv10r1.FK_Compras_Proveedores" FromRole="Proveedores" ToRole="Compras" />
+          <NavigationProperty Name="ProveedoresContacto" Relationship="ModeloMxPOSv10r1.FK_ProveedoresContacto_Proveedores" FromRole="Proveedores" ToRole="ProveedoresContacto" />
+          <NavigationProperty Name="ProveedoresDomicilios" Relationship="ModeloMxPOSv10r1.FK_ProveedoresDomicilios_Proveedores" FromRole="Proveedores" ToRole="ProveedoresDomicilios" />
+        </EntityType>
+        <EntityType Name="ProveedoresContacto">
+          <Key>
+            <PropertyRef Name="IDProveedorContacto" />
+          </Key>
+          <Property Name="IDProveedorContacto" Type="Int32" Nullable="false" />
+          <Property Name="IDProveedor" Type="Int32" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Proveedores" Relationship="ModeloMxPOSv10r1.FK_ProveedoresContacto_Proveedores" FromRole="ProveedoresContacto" ToRole="Proveedores" />
+        </EntityType>
+        <EntityType Name="ProveedoresDomicilios">
+          <Key>
+            <PropertyRef Name="IDProveedorDomicilio" />
+          </Key>
+          <Property Name="IDProveedorDomicilio" Type="Int32" Nullable="false" />
+          <Property Name="IDProveedor" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Calle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="NoExterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="NoInterior" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Colonia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Localidad" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Referencia" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Municipio" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Pais" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Proveedores" Relationship="ModeloMxPOSv10r1.FK_ProveedoresDomicilios_Proveedores" FromRole="ProveedoresDomicilios" ToRole="Proveedores" />
+        </EntityType>
+        <EntityType Name="Receptores">
+          <Key>
+            <PropertyRef Name="IDReceptor" />
+          </Key>
+          <Property Name="IDReceptor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_RFC" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Opc_Nombre" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_Receptores" FromRole="Receptores" ToRole="Comprobantes" />
+          <NavigationProperty Name="Domicilios" Relationship="ModeloMxPOSv10r1.FK_Domicilios_Receptores" FromRole="Receptores" ToRole="Domicilios" />
+          <NavigationProperty Name="ReceptoresContactos" Relationship="ModeloMxPOSv10r1.FK_ReceptoresContactos_Receptores" FromRole="Receptores" ToRole="ReceptoresContactos" />
+        </EntityType>
+        <EntityType Name="ReceptoresContactos">
+          <Key>
+            <PropertyRef Name="IDReceptorContacto" />
+          </Key>
+          <Property Name="IDReceptorContacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDReceptor" Type="Int32" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Telefono2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Email2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Receptores" Relationship="ModeloMxPOSv10r1.FK_ReceptoresContactos_Receptores" FromRole="ReceptoresContactos" ToRole="Receptores" />
+        </EntityType>
+        <EntityType Name="RegimenesFiscales">
+          <Key>
+            <PropertyRef Name="IDRegimenFiscal" />
+          </Key>
+          <Property Name="IDRegimenFiscal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEmisor" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_Regimen" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Emisores" Relationship="ModeloMxPOSv10r1.FK_RegimenesFiscales_Emisores" FromRole="RegimenesFiscales" ToRole="Emisores" />
+        </EntityType>
+        <EntityType Name="SerieFolio">
+          <Key>
+            <PropertyRef Name="IDSerieFolio" />
+          </Key>
+          <Property Name="IDSerieFolio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDDomicilioFiscal" Type="Int32" Nullable="false" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Seleccionado" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Serie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FolioInicio" Type="Int32" Nullable="false" />
+          <Property Name="FolioLimite" Type="Int32" Nullable="false" />
+          <Property Name="FolioActual" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DomiciliosFiscales" Relationship="ModeloMxPOSv10r1.FK_SerieFolio_DomiciliosFiscales" FromRole="SerieFolio" ToRole="DomiciliosFiscales" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TiposDeComprobantes">
+          <Key>
+            <PropertyRef Name="IDTipoDeComprobante" />
+          </Key>
+          <Property Name="IDTipoDeComprobante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistroActivo" Type="Boolean" Nullable="false" />
+          <Property Name="Dumb" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CFDI32_Req_TipoDeComprobante" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="ModeloMxPOSv10r1.FK_Comprobantes_TiposDeComprobantes" FromRole="TiposDeComprobantes" ToRole="Comprobantes" />
+        </EntityType>
+        <Association Name="FK_Compras_EstatusCompra">
+          <End Role="EstatusCompra" Type="ModeloMxPOSv10r1.EstatusCompra" Multiplicity="1" />
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstatusCompra">
+              <PropertyRef Name="IDEstatusCompra" />
+            </Principal>
+            <Dependent Role="Compras">
+              <PropertyRef Name="IDEstatusCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compras_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Proveedores" Multiplicity="1" />
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="Compras">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComprasDetalles_Compras">
+          <End Role="Compras" Type="ModeloMxPOSv10r1.Compras" Multiplicity="1" />
+          <End Role="ComprasDetalles" Type="ModeloMxPOSv10r1.ComprasDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="IDCompra" />
+            </Principal>
+            <Dependent Role="ComprasDetalles">
+              <PropertyRef Name="IDCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComprasDetalles_Productos">
+          <End Role="Productos" Type="ModeloMxPOSv10r1.Productos" Multiplicity="1" />
+          <End Role="ComprasDetalles" Type="ModeloMxPOSv10r1.ComprasDetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="ComprasDetalles">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Emisores" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Receptores" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_TiposDeComprobantes">
+          <End Role="TiposDeComprobantes" Type="ModeloMxPOSv10r1.TiposDeComprobantes" Multiplicity="1" />
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposDeComprobantes">
+              <PropertyRef Name="IDTipoDeComprobante" />
+            </Principal>
+            <Dependent Role="Comprobantes">
+              <PropertyRef Name="IDTipoComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conceptos_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="1" />
+          <End Role="Conceptos" Type="ModeloMxPOSv10r1.Conceptos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="Conceptos">
+              <PropertyRef Name="IDComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstatusComprobante_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="1" />
+          <End Role="EstatusComprobante" Type="ModeloMxPOSv10r1.EstatusComprobante" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="EstatusComprobante">
+              <PropertyRef Name="IDEstatusComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpedidoEn_Comprobantes">
+          <End Role="Comprobantes" Type="ModeloMxPOSv10r1.Comprobantes" Multiplicity="1" />
+          <End Role="ExpedidoEn" Type="ModeloMxPOSv10r1.ExpedidoEn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobantes">
+              <PropertyRef Name="IDComprobante" />
+            </Principal>
+            <Dependent Role="ExpedidoEn">
+              <PropertyRef Name="IDComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conceptos_Productos">
+          <End Role="Productos" Type="ModeloMxPOSv10r1.Productos" Multiplicity="1" />
+          <End Role="Conceptos" Type="ModeloMxPOSv10r1.Conceptos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="Conceptos">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilios_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Receptores" Multiplicity="1" />
+          <End Role="Domicilios" Type="ModeloMxPOSv10r1.Domicilios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="Domicilios">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Emisores" Multiplicity="1" />
+          <End Role="DomiciliosFiscales" Type="ModeloMxPOSv10r1.DomiciliosFiscales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="DomiciliosFiscales">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SerieFolio_DomiciliosFiscales">
+          <End Role="DomiciliosFiscales" Type="ModeloMxPOSv10r1.DomiciliosFiscales" Multiplicity="1" />
+          <End Role="SerieFolio" Type="ModeloMxPOSv10r1.SerieFolio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomiciliosFiscales">
+              <PropertyRef Name="IDDomicilioFiscal" />
+            </Principal>
+            <Dependent Role="SerieFolio">
+              <PropertyRef Name="IDDomicilioFiscal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegimenesFiscales_Emisores">
+          <End Role="Emisores" Type="ModeloMxPOSv10r1.Emisores" Multiplicity="1" />
+          <End Role="RegimenesFiscales" Type="ModeloMxPOSv10r1.RegimenesFiscales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emisores">
+              <PropertyRef Name="IDEmisor" />
+            </Principal>
+            <Dependent Role="RegimenesFiscales">
+              <PropertyRef Name="IDEmisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProveedoresContacto_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Proveedores" Multiplicity="1" />
+          <End Role="ProveedoresContacto" Type="ModeloMxPOSv10r1.ProveedoresContacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="ProveedoresContacto">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProveedoresDomicilios_Proveedores">
+          <End Role="Proveedores" Type="ModeloMxPOSv10r1.Proveedores" Multiplicity="1" />
+          <End Role="ProveedoresDomicilios" Type="ModeloMxPOSv10r1.ProveedoresDomicilios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="IDProveedor" />
+            </Principal>
+            <Dependent Role="ProveedoresDomicilios">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReceptoresContactos_Receptores">
+          <End Role="Receptores" Type="ModeloMxPOSv10r1.Receptores" Multiplicity="1" />
+          <End Role="ReceptoresContactos" Type="ModeloMxPOSv10r1.ReceptoresContactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receptores">
+              <PropertyRef Name="IDReceptor" />
+            </Principal>
+            <Dependent Role="ReceptoresContactos">
+              <PropertyRef Name="IDReceptor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModeloMxPOSv10r1StoreContainer" CdmEntityContainer="MxPOSv10r1Entidades">
+          <EntitySetMapping Name="Compras">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Compras">
+              <MappingFragment StoreEntitySet="Compras">
+                <ScalarProperty Name="IDCompra" ColumnName="IDCompra" />
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="IDEstatusCompra" ColumnName="IDEstatusCompra" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="MotivoDescuento" ColumnName="MotivoDescuento" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComprasDetalles">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.ComprasDetalles">
+              <MappingFragment StoreEntitySet="ComprasDetalles">
+                <ScalarProperty Name="IDCompraDetalle" ColumnName="IDCompraDetalle" />
+                <ScalarProperty Name="IDCompra" ColumnName="IDCompra" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="DescuentoMotivo" ColumnName="DescuentoMotivo" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comprobantes">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Comprobantes">
+              <MappingFragment StoreEntitySet="Comprobantes">
+                <ScalarProperty Name="IDComprobante" ColumnName="IDComprobante" />
+                <ScalarProperty Name="IDEmisor" ColumnName="IDEmisor" />
+                <ScalarProperty Name="IDReceptor" ColumnName="IDReceptor" />
+                <ScalarProperty Name="IDTipoComprobante" ColumnName="IDTipoComprobante" />
+                <ScalarProperty Name="IDEstatusComprobante" ColumnName="IDEstatusComprobante" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_Version" ColumnName="CFDI32_Req_Version" />
+                <ScalarProperty Name="CFDI32_Opc_Serie" ColumnName="CFDI32_Opc_Serie" />
+                <ScalarProperty Name="CFDI32_Opc_Folio" ColumnName="CFDI32_Opc_Folio" />
+                <ScalarProperty Name="CFDI32_Req_Fecha" ColumnName="CFDI32_Req_Fecha" />
+                <ScalarProperty Name="CFDI32_Req_Sello" ColumnName="CFDI32_Req_Sello" />
+                <ScalarProperty Name="CFDI32_Req_FormaDePago" ColumnName="CFDI32_Req_FormaDePago" />
+                <ScalarProperty Name="CFDI32_Req_NoCertificado" ColumnName="CFDI32_Req_NoCertificado" />
+                <ScalarProperty Name="CFDI32_Req_Certificado" ColumnName="CFDI32_Req_Certificado" />
+                <ScalarProperty Name="CFDI32_Opc_CondicionesDePago" ColumnName="CFDI32_Opc_CondicionesDePago" />
+                <ScalarProperty Name="CFDI32_Req_Subtotal" ColumnName="CFDI32_Req_Subtotal" />
+                <ScalarProperty Name="CFDI32_Opc_Descuento" ColumnName="CFDI32_Opc_Descuento" />
+                <ScalarProperty Name="CFDI32_Opc_MotivoDescuento" ColumnName="CFDI32_Opc_MotivoDescuento" />
+                <ScalarProperty Name="CFDI32_Opc_TipoCambio" ColumnName="CFDI32_Opc_TipoCambio" />
+                <ScalarProperty Name="CFDI32_Req_Total" ColumnName="CFDI32_Req_Total" />
+                <ScalarProperty Name="CFDI32_Req_TipoDeComprobante" ColumnName="CFDI32_Req_TipoDeComprobante" />
+                <ScalarProperty Name="CFDI32_Req_MetodoDePago" ColumnName="CFDI32_Req_MetodoDePago" />
+                <ScalarProperty Name="CFDI32_Req_LugarExpedicion" ColumnName="CFDI32_Req_LugarExpedicion" />
+                <ScalarProperty Name="CFDI32_Opc_NumCtaPago" ColumnName="CFDI32_Opc_NumCtaPago" />
+                <ScalarProperty Name="CFDI32_Opc_FolioFiscalOrig" ColumnName="CFDI32_Opc_FolioFiscalOrig" />
+                <ScalarProperty Name="CFDI32_Opc_SerieFolioFiscalOrig" ColumnName="CFDI32_Opc_SerieFolioFiscalOrig" />
+                <ScalarProperty Name="CFDI32_Opc_FechaFolioFiscalOrig" ColumnName="CFDI32_Opc_FechaFolioFiscalOrig" />
+                <ScalarProperty Name="CFDI32_Opc_MontoFolioFiscalOrig" ColumnName="CFDI32_Opc_MontoFolioFiscalOrig" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conceptos">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Conceptos">
+              <MappingFragment StoreEntitySet="Conceptos">
+                <ScalarProperty Name="IDConcepto" ColumnName="IDConcepto" />
+                <ScalarProperty Name="IDComprobante" ColumnName="IDComprobante" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_Cantidad" ColumnName="CFDI32_Req_Cantidad" />
+                <ScalarProperty Name="CFDI32_Req_Unidad" ColumnName="CFDI32_Req_Unidad" />
+                <ScalarProperty Name="CFDI32_Opc_NoIdentificacion" ColumnName="CFDI32_Opc_NoIdentificacion" />
+                <ScalarProperty Name="CFDI32_Req_Descripcion" ColumnName="CFDI32_Req_Descripcion" />
+                <ScalarProperty Name="CFDI32_Req_ValorUnitario" ColumnName="CFDI32_Req_ValorUnitario" />
+                <ScalarProperty Name="CFDI32_Req_Importe" ColumnName="CFDI32_Req_Importe" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="DescuentoMotivo" ColumnName="DescuentoMotivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configuraciones">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Configuraciones">
+              <MappingFragment StoreEntitySet="Configuraciones">
+                <ScalarProperty Name="IDConfiguracion" ColumnName="IDConfiguracion" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="DescuentoMinimo" ColumnName="DescuentoMinimo" />
+                <ScalarProperty Name="DescuentoMaximo" ColumnName="DescuentoMaximo" />
+                <ScalarProperty Name="DescuentoPassword" ColumnName="DescuentoPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domicilios">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Domicilios">
+              <MappingFragment StoreEntitySet="Domicilios">
+                <ScalarProperty Name="IDDomicilio" ColumnName="IDReceptorDomicilio" />
+                <ScalarProperty Name="IDReceptor" ColumnName="IDReceptor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Opc_Calle" ColumnName="CFDI32_Opc_Calle" />
+                <ScalarProperty Name="CFDI32_Opc_NoExterior" ColumnName="CFDI32_Opc_NoExterior" />
+                <ScalarProperty Name="CFDI32_Opc_NoInterior" ColumnName="CFDI32_Opc_NoInterior" />
+                <ScalarProperty Name="CFDI32_Opc_Colonia" ColumnName="CFDI32_Opc_Colonia" />
+                <ScalarProperty Name="CFDI32_Opc_Localidad" ColumnName="CFDI32_Opc_Localidad" />
+                <ScalarProperty Name="CFDI32_Opc_Referencia" ColumnName="CFDI32_Opc_Referencia" />
+                <ScalarProperty Name="CFDI32_Opc_Municipio" ColumnName="CFDI32_Opc_Municipio" />
+                <ScalarProperty Name="CFDI32_Opc_Estado" ColumnName="CFDI32_Opc_Estado" />
+                <ScalarProperty Name="CFDI32_Req_Pais" ColumnName="CFDI32_Req_Pais" />
+                <ScalarProperty Name="CFDI32_Opc_CodigoPostal" ColumnName="CFDI32_Opc_CodigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomiciliosFiscales">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.DomiciliosFiscales">
+              <MappingFragment StoreEntitySet="DomiciliosFiscales">
+                <ScalarProperty Name="IDDomicilioFiscal" ColumnName="IDEmisorDomicilioFiscal" />
+                <ScalarProperty Name="IDEmisor" ColumnName="IDEmisor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_Calle" ColumnName="CFDI32_Req_Calle" />
+                <ScalarProperty Name="CFDI32_Opc_NoExterior" ColumnName="CFDI32_Opc_NoExterior" />
+                <ScalarProperty Name="CFDI32_Opc_NoInterior" ColumnName="CFDI32_Opc_NoInterior" />
+                <ScalarProperty Name="CFDI32_Opc_Colonia" ColumnName="CFDI32_Opc_Colonia" />
+                <ScalarProperty Name="CFDI32_Opc_Localidad" ColumnName="CFDI32_Opc_Localidad" />
+                <ScalarProperty Name="CFDI32_Opc_Referencia" ColumnName="CFDI32_Opc_Referencia" />
+                <ScalarProperty Name="CFDI32_Req_Municipio" ColumnName="CFDI32_Req_Municipio" />
+                <ScalarProperty Name="CFDI32_Req_Estado" ColumnName="CFDI32_Req_Estado" />
+                <ScalarProperty Name="CFDI32_Req_Pais" ColumnName="CFDI32_Req_Pais" />
+                <ScalarProperty Name="CFDI32_Req_CodigoPostal" ColumnName="CFDI32_Req_CodigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emisores">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Emisores">
+              <MappingFragment StoreEntitySet="Emisores">
+                <ScalarProperty Name="IDEmisor" ColumnName="IDEmisor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_RFC" ColumnName="CFDI32_Req_RFC" />
+                <ScalarProperty Name="CFDI32_Opc_Nombre" ColumnName="CFDI32_Opc_Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Errores">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Errores">
+              <MappingFragment StoreEntitySet="Errores">
+                <ScalarProperty Name="IDError" ColumnName="IDError" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="CodigoError" ColumnName="CodigoError" />
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+                <ScalarProperty Name="SolucionError" ColumnName="SolucionError" />
+                <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstatusCompra">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.EstatusCompra">
+              <MappingFragment StoreEntitySet="EstatusCompra">
+                <ScalarProperty Name="IDEstatusCompra" ColumnName="IDEstatusCompra" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Leyenda" ColumnName="Leyenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstatusComprobante">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.EstatusComprobante">
+              <MappingFragment StoreEntitySet="EstatusComprobante">
+                <ScalarProperty Name="IDEstatusComprobante" ColumnName="IDEstatusComprobante" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Leyenda" ColumnName="Leyenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpedidoEn">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.ExpedidoEn">
+              <MappingFragment StoreEntitySet="ExpedidoEn">
+                <ScalarProperty Name="IDExpedidoEn" ColumnName="IDExpedidoEn" />
+                <ScalarProperty Name="IDComprobante" ColumnName="IDComprobante" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Opc_Calle" ColumnName="CFDI32_Opc_Calle" />
+                <ScalarProperty Name="CFDI32_Opc_NoExterior" ColumnName="CFDI32_Opc_NoExterior" />
+                <ScalarProperty Name="CFDI32_Opc_NoInterior" ColumnName="CFDI32_Opc_NoInterior" />
+                <ScalarProperty Name="CFDI32_Opc_Colonia" ColumnName="CFDI32_Opc_Colonia" />
+                <ScalarProperty Name="CFDI32_Opc_Localidad" ColumnName="CFDI32_Opc_Localidad" />
+                <ScalarProperty Name="CFDI32_Opc_Referencia" ColumnName="CFDI32_Opc_Referencia" />
+                <ScalarProperty Name="CFDI32_Opc_Municipio" ColumnName="CFDI32_Opc_Municipio" />
+                <ScalarProperty Name="CFDI32_Opc_Estado" ColumnName="CFDI32_Opc_Estado" />
+                <ScalarProperty Name="CFDI32_Req_Pais" ColumnName="CFDI32_Req_Pais" />
+                <ScalarProperty Name="CFDI32_Opc_CodigoPostal" ColumnName="CFDI32_Opc_CodigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Logs">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="IDLog" ColumnName="IDLog" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Accion" ColumnName="Accion" />
+                <ScalarProperty Name="Parametros" ColumnName="Parametros" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="CostoAnterior" ColumnName="CostoAnterior" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="PrecioAnterior" ColumnName="PrecioAnterior" />
+                <ScalarProperty Name="Entradas" ColumnName="Entradas" />
+                <ScalarProperty Name="Salidas" ColumnName="Salidas" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Proveedores">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProveedoresContacto">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.ProveedoresContacto">
+              <MappingFragment StoreEntitySet="ProveedoresContacto">
+                <ScalarProperty Name="IDProveedorContacto" ColumnName="IDProveedorContacto" />
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProveedoresDomicilios">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.ProveedoresDomicilios">
+              <MappingFragment StoreEntitySet="ProveedoresDomicilios">
+                <ScalarProperty Name="IDProveedorDomicilio" ColumnName="IDProveedorDomicilio" />
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="NoExterior" ColumnName="NoExterior" />
+                <ScalarProperty Name="NoInterior" ColumnName="NoInterior" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receptores">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.Receptores">
+              <MappingFragment StoreEntitySet="Receptores">
+                <ScalarProperty Name="IDReceptor" ColumnName="IDReceptor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_RFC" ColumnName="CFDI32_Req_RFC" />
+                <ScalarProperty Name="CFDI32_Opc_Nombre" ColumnName="CFDI32_Opc_Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceptoresContactos">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.ReceptoresContactos">
+              <MappingFragment StoreEntitySet="ReceptoresContactos">
+                <ScalarProperty Name="IDReceptorContacto" ColumnName="IDReceptorContacto" />
+                <ScalarProperty Name="IDReceptor" ColumnName="IDReceptor" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegimenesFiscales">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.RegimenesFiscales">
+              <MappingFragment StoreEntitySet="RegimenesFiscales">
+                <ScalarProperty Name="IDRegimenFiscal" ColumnName="IDRegimenFiscal" />
+                <ScalarProperty Name="IDEmisor" ColumnName="IDEmisor" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_Regimen" ColumnName="CFDI32_Req_Regimen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SerieFolio">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.SerieFolio">
+              <MappingFragment StoreEntitySet="SerieFolio">
+                <ScalarProperty Name="IDSerieFolio" ColumnName="IDSerieFolio" />
+                <ScalarProperty Name="IDDomicilioFiscal" ColumnName="IDDomicilioFiscal" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Seleccionado" ColumnName="Seleccionado" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="FolioInicio" ColumnName="FolioInicio" />
+                <ScalarProperty Name="FolioLimite" ColumnName="FolioLimite" />
+                <ScalarProperty Name="FolioActual" ColumnName="FolioActual" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposDeComprobantes">
+            <EntityTypeMapping TypeName="ModeloMxPOSv10r1.TiposDeComprobantes">
+              <MappingFragment StoreEntitySet="TiposDeComprobantes">
+                <ScalarProperty Name="IDTipoDeComprobante" ColumnName="IDTipoDeComprobante" />
+                <ScalarProperty Name="RegistroActivo" ColumnName="RegistroActivo" />
+                <ScalarProperty Name="Dumb" ColumnName="Dumb" />
+                <ScalarProperty Name="CFDI32_Req_TipoDeComprobante" ColumnName="CFDI32_Req_TipoDeComprobante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModeloMxPOSv10r1" ZoomLevel="71">
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Compras" Width="1.5" PointX="10" PointY="3.625" Height="4.0956022135416656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.ComprasDetalles" Width="1.5" PointX="12.25" PointY="3.25" Height="3.7109993489583322" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Comprobantes" Width="1.5" PointX="3" PointY="7.5" Height="7.941630859375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Conceptos" Width="1.5" PointX="5.25" PointY="7.625" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Configuraciones" Width="1.5" PointX="12.75" PointY="7.75" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Domicilios" Width="1.5" PointX="3" PointY="25.375" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.DomiciliosFiscales" Width="1.5" PointX="3" PointY="16.5" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Emisores" Width="1.5" PointX="0.75" PointY="10.125" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Errores" Width="1.5" PointX="12.75" PointY="11.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.EstatusCompra" Width="1.5" PointX="7.75" PointY="2.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.EstatusComprobante" Width="1.5" PointX="5.25" PointY="12.875" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.ExpedidoEn" Width="1.5" PointX="5.25" PointY="21.625" Height="3.9033007812500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Logs" Width="1.5" PointX="14.75" PointY="0.75" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Productos" Width="1.5" PointX="3" PointY="2.5" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Proveedores" Width="1.5" PointX="7.625" PointY="6.75" Height="2.5571907552083379" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.ProveedoresContacto" Width="1.5" PointX="10" PointY="8.75" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.ProveedoresDomicilios" Width="1.5" PointX="10" PointY="12.25" Height="4.0956022135416692" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.Receptores" Width="1.5" PointX="0.75" PointY="5.875" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.ReceptoresContactos" Width="1.5" PointX="3" PointY="30.25" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.RegimenesFiscales" Width="1.5" PointX="3" PointY="21.5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.SerieFolio" Width="1.5" PointX="5.25" PointY="17.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.sysdiagrams" Width="1.5" PointX="14.75" PointY="4.75" Height="1.9802864583333282" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloMxPOSv10r1.TiposDeComprobantes" Width="1.5" PointX="0.75" PointY="14.125" Height="1.9802864583333246" IsExpanded="true" />
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Compras_EstatusCompra" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="4.1151432291666659" />
+          <ConnectorPoint PointX="10" PointY="4.1151432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Compras_Proveedores" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.125" PointY="7.2353011067708328" />
+          <ConnectorPoint PointX="10" PointY="7.2353011067708328" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ComprasDetalles_Compras" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="5.2929996744791659" />
+          <ConnectorPoint PointX="12.25" PointY="5.2929996744791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ComprasDetalles_Productos" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.53125" />
+          <ConnectorPoint PointX="13" PointY="2.53125" />
+          <ConnectorPoint PointX="13" PointY="3.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Comprobantes_Emisores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.49974609375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.499746093749998" />
+          <ConnectorPoint PointX="2.8020833333333335" PointY="11.49974609375" />
+          <ConnectorPoint PointX="3" PointY="11.49974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Comprobantes_Receptores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.9660953776041694" />
+          <ConnectorPoint PointX="3" PointY="7.9660953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Comprobantes_TiposDeComprobantes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.7833154296875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="14.783315429687498" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="14.7833154296875" />
+          <ConnectorPoint PointX="3" PointY="14.7833154296875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Conceptos_Comprobantes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="9.576650390625" />
+          <ConnectorPoint PointX="5.25" PointY="9.576650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_EstatusComprobante_Comprobantes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.865143229166668" />
+          <ConnectorPoint PointX="5.25" PointY="13.865143229166668" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ExpedidoEn_Comprobantes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.441630859375" />
+          <ConnectorPoint PointX="4.875" PointY="15.816630859375" />
+          <ConnectorPoint PointX="4.875" PointY="23.576650390625" />
+          <ConnectorPoint PointX="5.25" PointY="23.576650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Conceptos_Productos" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.5946786067708274" />
+          <ConnectorPoint PointX="6" PointY="4.5946786067708274" />
+          <ConnectorPoint PointX="6" PointY="7.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Domicilios_Receptores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.3756512936698773" />
+          <ConnectorPoint PointX="2.71875" PointY="8.8444012936698773" />
+          <ConnectorPoint PointX="2.71875" PointY="27.422801106770834" />
+          <ConnectorPoint PointX="3" PointY="27.422801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_Emisores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.849106572115385" />
+          <ConnectorPoint PointX="2.5660744349011217" PointY="13.165181007016505" />
+          <ConnectorPoint PointX="2.7776755650988791" PointY="13.376782137214264" />
+          <ConnectorPoint PointX="2.875" PointY="13.474106572115385" />
+          <ConnectorPoint PointX="2.875" PointY="18.643951822916666" />
+          <ConnectorPoint PointX="3" PointY="18.643951822916666" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_SerieFolio_DomiciliosFiscales" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.595896809895834" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="18.595896809895834" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="18.595896809895834" />
+          <ConnectorPoint PointX="5.25" PointY="18.595896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_RegimenesFiscales_Emisores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.867568110576922" />
+          <ConnectorPoint PointX="2.5660744349011217" PointY="13.183642545478042" />
+          <ConnectorPoint PointX="2.7776755650988791" PointY="13.3952436756758" />
+          <ConnectorPoint PointX="2.78125" PointY="13.398818110576922" />
+          <ConnectorPoint PointX="2.78125" PointY="22.682444661458334" />
+          <ConnectorPoint PointX="3" PointY="22.682444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ProveedoresContacto_Proveedores" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.125" PointY="9.02859537760417" />
+          <ConnectorPoint PointX="10" PointY="9.02859537760417" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ProveedoresDomicilios_Proveedores" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.375" PointY="9.3071907552083388" />
+          <ConnectorPoint PointX="8.375" PointY="14.297801106770834" />
+          <ConnectorPoint PointX="10" PointY="14.297801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloMxPOSv10r1.FK_ReceptoresContactos_Receptores" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2257692307692305" PointY="8.4321907552083388" />
+          <ConnectorPoint PointX="2.625" PointY="8.8314215244391079" />
+          <ConnectorPoint PointX="2.625" PointY="31.624746093750005" />
+          <ConnectorPoint PointX="3" PointY="31.624746093750005" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

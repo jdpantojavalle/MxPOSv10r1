@@ -1,0 +1,2 @@
+MxPOS
+Evitar replicacion de RFC's
