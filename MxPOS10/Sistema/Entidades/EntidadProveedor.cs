@@ -10,7 +10,10 @@
  * Revisión: N/A
  * Revisado por: N/A
  * 
- * Notas: N/A
+ * Notas:
+ * 08/04/2013 - Funcionalidad de entidad básica completa:
+ *              Métodos para las entidades Proveedores
+ *              Métodos para las entidades ProveedoresDomicilios
  */
 
 using System;
@@ -250,7 +253,7 @@ namespace MxPOS10.Sistema.Entidades
         }
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
-        //      MÉTODOS PARA LAS ENTIDADES DE NAVEGACIÓN
+        //      MÉTODOS PARA LAS ENTIDADES DE PROVEEDOR DOMICILIOS
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
