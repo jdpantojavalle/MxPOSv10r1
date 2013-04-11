@@ -69,10 +69,17 @@ hr {
 }
 
 /** WRAPPER */
-
+/*
+margin: 0px 0px 0px 0px;
+	padding: 0;
+	background: #2B2B2B;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #8F8F8F;
+*/
 #wrapper {
 	overflow: hidden;
-	background: #FFFFFF;
+	background: #E6E6FA;/*#E6E6FA;2B2B2B*/
 }
 
 .container {
@@ -170,22 +177,28 @@ hr {
 
 #page {
 	overflow: hidden;
-	width: 1120px;
+	width: 1038px;
 	margin: 0px auto;
 	padding: 50px 40px;
 	color: #8F8F8F;
-	border-top: 1px solid #A1A1A1;
 }
 
 /** CONTENT HOLDER **/
 
-.contenplacetholder1 {
+.contentplacetholder1 {
 	overflow: hidden;
 	width: 1120px;
 	margin: 0px auto;
 	padding: 5%;
 	background-color: #E6E6FA;
-	border-top: 1px solid #A1A1A1;
+}
+
+.contentplacetholder2 {
+	overflow: hidden;
+	width: 1120px;
+	margin: 0px auto;
+	padding: 5%;
+	background-color: #E6E6FA;
 }
 
 /** CONTENT */

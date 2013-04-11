@@ -25,25 +25,28 @@
 			    <h1><a href="#">MXPOS</a></h1>
 		    </div>
 		    <div id="menu">
-    			<ul>
-				    <li class="current_page_item">  <a href="PaginaEmisor.aspx" accesskey="1" title="">EMISORES</a></li>
-				    <li>                            <a href="PaginaReceptor.aspx" accesskey="2" title="">RECEPTORES</a></li>
+            <asp:PlaceHolder ID="phlMenu" runat="server"></asp:PlaceHolder>
+    			<!--
+                <ul>
+				    <li> <a href="PaginaEmisor.aspx" accesskey="1" title="">EMISORES</a></li>
+				    <li> <a href="PaginaReceptor.aspx" accesskey="2" title="">RECEPTORES</a></li>
 				    <li>                            <a href="#" accesskey="3" title="">PRÓXIMAMENTE</a></li>
 				    <li>                            <a href="#" accesskey="4" title="">PRÓXIMAMENTE</a></li>
 				    <li>                            <a href="#" accesskey="5" title="">PRÓXIMAMENTE</a></li>
 			    </ul>
+                -->
 		    </div>
 	    </div>
     </div>
 
-    <div id="contentplaceholder1" class="contenplacetholder1">
+    <div id="contentplaceholder1" class="contentplacetholder1">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
 
     <div><br /><br /></div>
 
-    <div id="wrapper">
+    <div id="wrapper" class="contentplacetholder2">
     	<div id="page-wrapper">
 		    <div id="page">
     			<div id="wide-content">
@@ -57,6 +60,7 @@
 		    </div>
 	    </div>
     </div>
+
 
     <div id="footer" class="container">
     	<p>Copyright (c) 2013 codeviewmx.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
