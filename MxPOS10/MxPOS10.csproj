@@ -443,6 +443,7 @@
     <Content Include="Sistema\Paginas\PaginaDomicilioFiscal.aspx" />
     <Content Include="Sistema\Paginas\PaginaEmisor.aspx" />
     <Content Include="Sistema\Paginas\PaginaProveedor.aspx" />
+    <Content Include="Sistema\Paginas\PaginaProveedorDomicilio.aspx" />
     <Content Include="Sistema\Paginas\PaginaReceptor.aspx" />
     <Content Include="Sistema\Reportes\Emisores\ReporteEmisor.aspx" />
     <Content Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.aspx" />
@@ -527,6 +528,13 @@
     </Compile>
     <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.designer.cs">
       <DependentUpon>PaginaProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaProveedorDomicilio.aspx.cs">
+      <DependentUpon>PaginaProveedorDomicilio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaProveedorDomicilio.aspx.designer.cs">
+      <DependentUpon>PaginaProveedorDomicilio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx.cs">
       <DependentUpon>ReporteReceptor.aspx</DependentUpon>

@@ -30,12 +30,16 @@ namespace MxPOS10.Sistema.Paginas
 
         protected void btnReporteProveedores_Click(object sender, EventArgs e)
         {
-            // Agregar reporte aquí
+            VerReporteProveedores();
         }
 
         protected void btnProveedoresDomicilios_Click(object sender, EventArgs e)
         {
-            // Agregar domicilios aquí
+            if (gvwProveedores.SelectedRow != null)
+            {
+                int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
+                VerDomicilios(idProveedor);
+            }
         }
 
         protected void btnAgregarProveedor_Click(object sender, EventArgs e)
@@ -153,10 +157,10 @@ namespace MxPOS10.Sistema.Paginas
             //Response.Redirect("~/Sistema/Reportes/Proveedores/ReporteEmisor.aspx");
         }
 
-        public void VerDomicilios(int idEmisor)
+        public void VerDomicilios(int idProveedor)
         {
             Limpiar();
-            //Response.Redirect("~/Sistema/Paginas/PaginaDomicilioFiscal.aspx?idEmisor=" + idEmisor);
+            Response.Redirect("~/Sistema/Paginas/PaginaProveedorDomicilio.aspx?idProveedor=" + idProveedor);
         }
 
         public void Limpiar()
