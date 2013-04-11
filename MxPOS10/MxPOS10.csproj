@@ -521,6 +521,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloMxPOSv10r1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\Entidades\EntidadEstatusCompra.cs" />
     <Compile Include="Sistema\Entidades\EntidadProveedor.cs" />
     <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.cs">
       <DependentUpon>PaginaProveedor.aspx</DependentUpon>
@@ -569,6 +570,7 @@
       <DependentUpon>ReporteReceptorDomicilio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Vistas\VistaDomicilio.cs" />
+    <Compile Include="Sistema\Vistas\VistaEstatusCompra.cs" />
     <Compile Include="Sistema\Vistas\VistaProveedor.cs" />
     <Compile Include="Sistema\Vistas\VistaProveedorDomicilio.cs" />
     <Compile Include="Sistema\Vistas\VistaReceptor.cs" />
