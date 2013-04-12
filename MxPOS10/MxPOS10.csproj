@@ -520,6 +520,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloMxPOSv10r1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\Entidades\EntidadCompra.cs" />
     <Compile Include="Sistema\Entidades\EntidadEstatusCompra.cs" />
     <Compile Include="Sistema\Entidades\EntidadProveedor.cs" />
     <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.cs">

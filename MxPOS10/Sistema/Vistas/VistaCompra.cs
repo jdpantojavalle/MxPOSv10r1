@@ -63,17 +63,17 @@ namespace MxPOS10.Sistema.Vistas
             set { _Fecha = value; }
         }
 
-        private float _Subtotal;
+        private double _Subtotal;
 
-        public float Subtotal
+        public double Subtotal
         {
             get { return _Subtotal; }
             set { _Subtotal = value; }
         }
 
-        private float _Descuento;
+        private double _Descuento;
 
-        public float Descuento
+        public double Descuento
         {
             get { return _Descuento; }
             set { _Descuento = value; }
@@ -87,16 +87,16 @@ namespace MxPOS10.Sistema.Vistas
             set { _MotivoDescuento = value; }
         }
 
-        private float _IVA;
+        private double _IVA;
 
-        public float IVA
+        public double IVA
         {
             get { return _IVA; }
             set { _IVA = value; }
         }
-        private float _Total;
+        private double _Total;
 
-        public float Total
+        public double Total
         {
             get { return _Total; }
             set { _Total = value; }
