@@ -569,6 +569,7 @@
     <Compile Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.aspx.designer.cs">
       <DependentUpon>ReporteReceptorDomicilio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\Vistas\VistaCompra.cs" />
     <Compile Include="Sistema\Vistas\VistaDomicilio.cs" />
     <Compile Include="Sistema\Vistas\VistaEstatusCompra.cs" />
     <Compile Include="Sistema\Vistas\VistaProveedor.cs" />
