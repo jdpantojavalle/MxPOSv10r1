@@ -177,22 +177,33 @@ margin: 0px 0px 0px 0px;
 
 #page {
 	overflow: hidden;
-	width: 1120px;
+	width: 1038px;
 	margin: 0px auto;
 	padding: 50px 40px;
+<<<<<<< HEAD
 	/*color: #8F8F8F;*/
 	border-top: 1px solid #A1A1A1;
+=======
+	color: #8F8F8F;
+>>>>>>> 0369f36ace47b082342787a9a158a23a1f3de338
 }
 
 /** CONTENT HOLDER **/
 
-.contenplacetholder1 {
+.contentplacetholder1 {
 	overflow: hidden;
 	width: 1120px;
 	margin: 0px auto;
 	padding: 5%;
 	background-color: #E6E6FA;
-	border-top: 1px solid #A1A1A1;
+}
+
+.contentplacetholder2 {
+	overflow: hidden;
+	width: 1120px;
+	margin: 0px auto;
+	padding: 5%;
+	background-color: #E6E6FA;
 }
 
 .contenplacetholder2 {
