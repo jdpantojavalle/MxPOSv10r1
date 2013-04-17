@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModeloMxPOSv10r1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="ModeloMxPOSv10r1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="ModeloMxPOSv10r1StoreContainer">
           <EntitySet Name="Compras" EntityType="ModeloMxPOSv10r1.Store.Compras" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ComprasDetalles" EntityType="ModeloMxPOSv10r1.Store.ComprasDetalles" store:Type="Tables" Schema="dbo" />
@@ -106,7 +106,7 @@
           <Key>
             <PropertyRef Name="IDCompra" />
           </Key>
-          <Property Name="IDCompra" Type="int" Nullable="false" />
+          <Property Name="IDCompra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IDProveedor" Type="int" Nullable="false" />
           <Property Name="IDEstatusCompra" Type="int" Nullable="false" />
           <Property Name="RegistroActivo" Type="bit" Nullable="false" />
@@ -124,7 +124,7 @@
           <Key>
             <PropertyRef Name="IDCompraDetalle" />
           </Key>
-          <Property Name="IDCompraDetalle" Type="int" Nullable="false" />
+          <Property Name="IDCompraDetalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IDCompra" Type="int" Nullable="false" />
           <Property Name="IDProducto" Type="int" Nullable="false" />
           <Property Name="RegistroActivo" Type="bit" Nullable="false" />
@@ -271,7 +271,7 @@
           <Key>
             <PropertyRef Name="IDEstatusCompra" />
           </Key>
-          <Property Name="IDEstatusCompra" Type="int" Nullable="false" />
+          <Property Name="IDEstatusCompra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RegistroActivo" Type="bit" Nullable="false" />
           <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
           <Property Name="Leyenda" Type="varchar(max)" Nullable="false" />
@@ -341,7 +341,7 @@
           <Key>
             <PropertyRef Name="IDProveedor" />
           </Key>
-          <Property Name="IDProveedor" Type="int" Nullable="false" />
+          <Property Name="IDProveedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RegistroActivo" Type="bit" Nullable="false" />
           <Property Name="Dumb" Type="varchar(max)" />
           <Property Name="RFC" Type="varchar(max)" Nullable="false" />
@@ -351,7 +351,7 @@
           <Key>
             <PropertyRef Name="IDProveedorContacto" />
           </Key>
-          <Property Name="IDProveedorContacto" Type="int" Nullable="false" />
+          <Property Name="IDProveedorContacto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IDProveedor" Type="int" Nullable="false" />
           <Property Name="Seleccionado" Type="bit" Nullable="false" />
           <Property Name="Dumb" Type="varchar(max)" />
@@ -364,7 +364,7 @@
           <Key>
             <PropertyRef Name="IDProveedorDomicilio" />
           </Key>
-          <Property Name="IDProveedorDomicilio" Type="int" Nullable="false" />
+          <Property Name="IDProveedorDomicilio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="IDProveedor" Type="int" Nullable="false" />
           <Property Name="RegistroActivo" Type="bit" Nullable="false" />
           <Property Name="Seleccionado" Type="bit" Nullable="false" />
@@ -663,8 +663,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ModeloMxPOSv10r1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">

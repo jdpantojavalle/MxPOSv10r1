@@ -2,10 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <asp:Label ID="Label1" runat="server" 
-            style="font-weight: 700; font-size: xx-large" Text="Proveedores"></asp:Label>
-    </div>
     <br />
     <div>
         <asp:Label ID="Label2" runat="server" 
@@ -23,11 +19,11 @@
         </tr>
         <tr>
             <td class="style1">
-                <asp:Label ID="Label6" runat="server" Text="ID"></asp:Label>
-            </td>
+                        <asp:Label ID="Label6" runat="server" Text="ID"></asp:Label>
+                    </td>
             <td>
-                <asp:Label ID="lblID" runat="server" Text="lblID"></asp:Label>
-            </td>
+                        <asp:Label ID="lblID" runat="server" Text="lblID"></asp:Label>
+                    </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -54,7 +50,8 @@
         <tr>
             <td class="style1">
                 <asp:Button ID="btnReporteProveedores" runat="server" 
-                    onclick="btnReporteProveedores_Click" Text="Ver reporte de proveedores" />
+                    onclick="btnReporteProveedores_Click" Text="Ver reporte de proveedores" 
+                    Width="244px" />
             </td>
             <td>
                 <asp:Button ID="btnAgregarProveedor" runat="server" 
@@ -67,7 +64,7 @@
             <td class="style1">
                 <asp:Button ID="btnProveedoresDomicilios" runat="server" 
                     onclick="btnProveedoresDomicilios_Click" Text="Ver domicilios" 
-                    Width="233px" />
+                    Width="244px" />
             </td>
             <td>
                 <asp:Button ID="btnActualizarProveedor" runat="server" 

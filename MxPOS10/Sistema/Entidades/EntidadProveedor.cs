@@ -154,7 +154,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -185,7 +185,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -208,7 +208,6 @@ namespace MxPOS10.Sistema.Entidades
                 proveedor.RFC = rfc;
                 proveedor.Nombre = nombre;
 
-                proveedor.RegistroActivo = true;
                 entidades.SaveChanges();
 
                 mensaje = "Proveedor actualizado correctamente";
@@ -216,7 +215,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
 
@@ -244,7 +243,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -267,6 +266,7 @@ namespace MxPOS10.Sistema.Entidades
                         {
                             IDDomicilio = pd.IDProveedorDomicilio,
                             IDReceptor = pd.IDProveedor,
+                            Seleccionado = pd.Seleccionado,
                             Calle = pd.Calle,
                             NoExterior = pd.NoExterior,
                             NoInterior = pd.NoInterior,
@@ -295,6 +295,7 @@ namespace MxPOS10.Sistema.Entidades
                         {
                             IDDomicilio = pd.IDProveedorDomicilio,
                             IDReceptor = pd.IDProveedor,
+                            Seleccionado = pd.Seleccionado,
                             Calle = pd.Calle,
                             NoExterior = pd.NoExterior,
                             NoInterior = pd.NoInterior,
@@ -323,6 +324,7 @@ namespace MxPOS10.Sistema.Entidades
                         {
                             IDDomicilio = pd.IDProveedorDomicilio,
                             IDReceptor = pd.IDProveedor,
+                            Seleccionado = pd.Seleccionado,
                             Calle = pd.Calle,
                             NoExterior = pd.NoExterior,
                             NoInterior = pd.NoInterior,
@@ -351,6 +353,7 @@ namespace MxPOS10.Sistema.Entidades
                         {
                             IDDomicilio = pd.IDProveedorDomicilio,
                             IDReceptor = pd.IDProveedor,
+                            Seleccionado = pd.Seleccionado,
                             Calle = pd.Calle,
                             NoExterior = pd.NoExterior,
                             NoInterior = pd.NoInterior,
@@ -401,7 +404,49 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Establecerá un domicilio de proveedor identificado por ID como el domicilio seleccionado
+        /// </summary>
+        /// <param name="idProveedor">El ID del proveedor con el domicilio de proveedor</param>
+        /// <param name="idProveedorDomicilio">El ID del domicilio de proveedor</param>
+        /// <param name="mensaje">Un mensaje con el resultado de la operación</param>
+        /// <returns>Devuelve true si no ocurrió ningun error durante la operación, false de lo contrario</returns>
+        /// <summary>
+        public bool EstablecerDomicilioSeleccionado(int idProveedor, int idProveedorDomicilio, out string mensaje)
+        {
+            try
+            {
+                var query = from pd in entidades.ProveedoresDomicilios
+                            select pd;
+
+                List<ProveedoresDomicilios> prvDmc = query.ToList();
+
+                foreach (ProveedoresDomicilios pd in prvDmc)
+                {
+                    pd.Seleccionado = false;
+                    entidades.SaveChanges();
+                }
+                
+                query = from pd in entidades.ProveedoresDomicilios
+                        where pd.IDProveedor == idProveedor && pd.IDProveedorDomicilio == idProveedorDomicilio
+                        select pd;
+
+                ProveedoresDomicilios domicilio = query.SingleOrDefault();
+
+                domicilio.Seleccionado = true;
+                mensaje = "Domicilio de proveedor seleccionado como domicilio por defecto correctamente";
+
+                entidades.SaveChanges();
+                return true;
+            }
+            catch (Exception p)
+            {
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -449,7 +494,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -492,7 +537,6 @@ namespace MxPOS10.Sistema.Entidades
                 domicilio.Pais = pais;
                 domicilio.CodigoPostal = codigoPostal;
 
-                domicilio.RegistroActivo = true;
                 entidades.SaveChanges();
 
                 mensaje = "Domicilio de proveedor actualizado correctamente";
@@ -500,7 +544,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }
@@ -531,7 +575,7 @@ namespace MxPOS10.Sistema.Entidades
             }
             catch (Exception p)
             {
-                mensaje = p.Message;
+                mensaje = p.Message + ": " + p.InnerException.Message;
                 return false;
             }
         }

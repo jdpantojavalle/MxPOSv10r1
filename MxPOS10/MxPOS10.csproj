@@ -441,11 +441,13 @@
     <Content Include="Recursos\Iconos\brankic1979\brankic1979-icon-set2_r9_c177.png" />
     <Content Include="Sistema\Paginas\PaginaDomicilio.aspx" />
     <Content Include="Sistema\Paginas\PaginaDomicilioFiscal.aspx" />
+    <Content Include="Sistema\Paginas\PaginaDomicilioProveedor.aspx" />
     <Content Include="Sistema\Paginas\PaginaEmisor.aspx" />
     <Content Include="Sistema\Paginas\PaginaProveedor.aspx" />
     <Content Include="Sistema\Paginas\PaginaReceptor.aspx" />
     <Content Include="Sistema\Reportes\Emisores\ReporteEmisor.aspx" />
     <Content Include="Sistema\Reportes\Emisores\ReporteEmisorDomicilioFiscal.aspx" />
+    <Content Include="Sistema\Reportes\Proveedores\ReporteProveedor.aspx" />
     <Content Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx" />
     <Content Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.aspx" />
     <Content Include="Styles\GreenPasture\default.css" />
@@ -522,12 +524,26 @@
     </Compile>
     <Compile Include="Sistema\Entidades\EntidadEstatusCompra.cs" />
     <Compile Include="Sistema\Entidades\EntidadProveedor.cs" />
+    <Compile Include="Sistema\Paginas\PaginaDomicilioProveedor.aspx.cs">
+      <DependentUpon>PaginaDomicilioProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Paginas\PaginaDomicilioProveedor.aspx.designer.cs">
+      <DependentUpon>PaginaDomicilioProveedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.cs">
       <DependentUpon>PaginaProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Sistema\Paginas\PaginaProveedor.aspx.designer.cs">
       <DependentUpon>PaginaProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Proveedores\ReporteProveedor.aspx.cs">
+      <DependentUpon>ReporteProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Reportes\Proveedores\ReporteProveedor.aspx.designer.cs">
+      <DependentUpon>ReporteProveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Reportes\Receptores\ReporteReceptor.aspx.cs">
       <DependentUpon>ReporteReceptor.aspx</DependentUpon>
@@ -635,6 +651,8 @@
     <Content Include="Styles\GreenPasture\GreenPasture.Master" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Sistema\Reportes\Proveedores\ReporteProveedor.rdlc" />
+    <EmbeddedResource Include="Sistema\Reportes\Proveedores\ReporteProveedorDomicilio.rdlc" />
     <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilioSubreporte.rdlc" />
     <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptorDomicilio.rdlc" />
     <EmbeddedResource Include="Sistema\Reportes\Receptores\ReporteReceptor.rdlc" />

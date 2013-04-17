@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MxPOS10.Sistema.Entidades;
-using MxPOS10.Sistema.Utilidades;
 using MxPOS10.Sistema.Vistas;
+using MxPOS10.Sistema.Utilidades;
 
 namespace MxPOS10.Sistema.Paginas
 {
     public partial class PaginaProveedor : System.Web.UI.Page
     {
-
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
         //      EVENTOS DE LA PÁGINA
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -20,48 +19,44 @@ namespace MxPOS10.Sistema.Paginas
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarProveedores();
+
+            if (!IsPostBack)
+            {
+                SeleccionarProveedorPorIndice(0);
+            }
         }
 
         protected void gvwProveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
-            SeleccionarProveedor(idProveedor);
+            SeleccionarProveedorPorIndice(gvwProveedores.SelectedIndex);
         }
 
         protected void btnReporteProveedores_Click(object sender, EventArgs e)
         {
-            // Agregar reporte aquí
+            VerReporteProveedores();
         }
 
         protected void btnProveedoresDomicilios_Click(object sender, EventArgs e)
         {
-            // Agregar domicilios aquí
+            int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
+            VerDomicilios(idProveedor);
         }
 
         protected void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
             AgregarProveedor(txtRFC.Text, txtNombre.Text);
-            Limpiar();
         }
 
         protected void btnActualizarProveedor_Click(object sender, EventArgs e)
         {
-            if (gvwProveedores.SelectedRow != null)
-            {
-                int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
-                ActualizarProveedor(idProveedor, txtRFC.Text, txtNombre.Text);
-                Limpiar();
-            }
+            int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
+            ActualizarProveedor(idProveedor, txtRFC.Text, txtNombre.Text);
         }
 
         protected void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
-            if (gvwProveedores.SelectedRow != null)
-            {
-                int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
-                EliminarProveedor(idProveedor);
-                Limpiar();
-            }
+            int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
+            EliminarProveedor(idProveedor);
         }
 
         //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -73,16 +68,50 @@ namespace MxPOS10.Sistema.Paginas
             try
             {
                 EntidadProveedor proveedores = new EntidadProveedor();
+                List<VistaProveedor> proveedoresActivos = proveedores.ObtenerProveedoresActivos();
+
                 gvwProveedores.DataSource = proveedores.ObtenerProveedoresActivos();
                 gvwProveedores.DataBind();
+
+                if (proveedoresActivos.Count > 0)
+                {
+                    HabilitarControles();
+                }
+                else
+                {
+                    DesHabilitarControles();
+                }
+
             }
             catch (Exception ex)
             {
-                Mensaje.Mostrar(this, ex.Message);
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
             }
         }
 
-        public void SeleccionarProveedor(int idProveedor)
+        public void SeleccionarProveedorPorIndice(int indiceProveedor)
+        {
+            try
+            {
+                if (gvwProveedores.Rows.Count > 0)
+                {
+                    gvwProveedores.SelectedIndex = indiceProveedor;
+                    gvwProveedores.SelectedRow.BackColor = System.Drawing.Color.Orange;
+                    int idProveedor = int.Parse(gvwProveedores.SelectedRow.Cells[1].Text);
+                    SeleccionarProveedorPorID(idProveedor);
+                }
+                else
+                {
+                    LimpiarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
+            }
+        }
+
+        public void SeleccionarProveedorPorID(int idProveedor)
         {
             try
             {
@@ -91,12 +120,10 @@ namespace MxPOS10.Sistema.Paginas
                 lblID.Text = proveedor.IDProveedor.ToString();
                 txtRFC.Text = proveedor.RFC;
                 txtNombre.Text = proveedor.Nombre;
-                gvwProveedores.SelectedRow.BackColor = System.Drawing.Color.Orange;
-
             }
             catch (Exception ex)
             {
-                Mensaje.Mostrar(this, ex.Message);
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
             }
         }
 
@@ -104,15 +131,16 @@ namespace MxPOS10.Sistema.Paginas
         {
             try
             {
-                EntidadProveedor proveedor = new EntidadProveedor();
                 string mensaje;
+                EntidadProveedor proveedor = new EntidadProveedor();
                 proveedor.AgregarProveedor(rfc, nombre, out mensaje);
                 Mensaje.Mostrar(this, mensaje);
                 CargarProveedores();
+                SeleccionarProveedorPorIndice(gvwProveedores.Rows.Count - 1);
             }
             catch (Exception ex)
             {
-                Mensaje.Mostrar(this, ex.Message);
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
             }
         }
 
@@ -125,10 +153,11 @@ namespace MxPOS10.Sistema.Paginas
                 emisor.ActualizarProveedor(idProveedor, rfc, nombre, out mensaje);
                 Mensaje.Mostrar(this, mensaje);
                 CargarProveedores();
+                SeleccionarProveedorPorIndice(gvwProveedores.SelectedIndex);
             }
             catch (Exception ex)
             {
-                Mensaje.Mostrar(this, ex.Message);
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
             }
         }
 
@@ -141,29 +170,45 @@ namespace MxPOS10.Sistema.Paginas
                 emisor.EstablecerProveedorActivo(idProveedor, false, out mensaje);
                 Mensaje.Mostrar(this, mensaje);
                 CargarProveedores();
+                SeleccionarProveedorPorIndice(0);
             }
             catch (Exception ex)
             {
-                Mensaje.Mostrar(this, ex.Message);
+                Mensaje.Mostrar(this, ex.Message + ": " + ex.InnerException.Message);
             }
         }
 
         public void VerReporteProveedores()
         {
-            //Response.Redirect("~/Sistema/Reportes/Proveedores/ReporteEmisor.aspx");
+            Response.Redirect("~/Sistema/Reportes/Proveedores/ReporteProveedor.aspx");
         }
 
-        public void VerDomicilios(int idEmisor)
+        public void VerDomicilios(int idProveedor)
         {
-            Limpiar();
-            //Response.Redirect("~/Sistema/Paginas/PaginaDomicilioFiscal.aspx?idEmisor=" + idEmisor);
+            Response.Redirect("~/Sistema/Paginas/PaginaDomicilioProveedor.aspx?idProveedor=" + idProveedor);
         }
 
-        public void Limpiar()
+        public void HabilitarControles()
+        {
+            btnReporteProveedores.Enabled = true;
+            btnProveedoresDomicilios.Enabled = true;
+            btnActualizarProveedor.Enabled = true;
+            btnEliminarProveedor.Enabled = true;
+        }
+
+        public void DesHabilitarControles()
+        {
+            btnReporteProveedores.Enabled = false;
+            btnProveedoresDomicilios.Enabled = false;
+            btnActualizarProveedor.Enabled = false;
+            btnEliminarProveedor.Enabled = false;
+        }
+
+        public void LimpiarDatos()
         {
             lblID.Text = string.Empty;
-            txtRFC.Text = string.Empty;
             txtNombre.Text = string.Empty;
+            txtRFC.Text = string.Empty;
         }
     }
 }

@@ -77,6 +77,7 @@ margin: 0px 0px 0px 0px;
 	font-size: 12px;
 	color: #8F8F8F;
 */
+
 #wrapper {
 	overflow: hidden;
 	background: #E6E6FA;/*#E6E6FA;2B2B2B*/
@@ -180,12 +181,8 @@ margin: 0px 0px 0px 0px;
 	width: 1038px;
 	margin: 0px auto;
 	padding: 50px 40px;
-<<<<<<< HEAD
-	/*color: #8F8F8F;*/
 	border-top: 1px solid #A1A1A1;
-=======
 	color: #8F8F8F;
->>>>>>> 0369f36ace47b082342787a9a158a23a1f3de338
 }
 
 /** CONTENT HOLDER **/

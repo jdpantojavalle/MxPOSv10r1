@@ -66,7 +66,8 @@ namespace MxPOS10.Sistema.Paginas
             if (gvwDomicilios.SelectedRow != null)
             {
                 int idDomicilio = int.Parse(gvwDomicilios.SelectedRow.Cells[1].Text);
-                SeleccionarDomicilio(idReceptor, idDomicilio);
+                EliminarDomicilio(idReceptor, idDomicilio);
+                Limpiar();
             }
         }
 

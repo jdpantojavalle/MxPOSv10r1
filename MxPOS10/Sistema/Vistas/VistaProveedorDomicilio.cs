@@ -38,6 +38,14 @@ namespace MxPOS10.Sistema.Vistas
             set { _IDReceptor = value; }
         }
 
+        private bool _Seleccionado;
+
+        public bool Seleccionado
+        {
+            get { return _Seleccionado; }
+            set { _Seleccionado = value; }
+        }
+
         private string _Calle;
 
         public string Calle
